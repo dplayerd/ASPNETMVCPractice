@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "AjaxGo";
+    Layout = "~/Views/Shared/_LayoutPractice.cshtml";
+}
+
+@section ScriptArea{
+    <script>
+        function getVillages(intID) {
+            var url = "@Url.Action("GetVillage", "Ajax")";
+
+            var postData = {};
+                //(intID == null || intID == undefined) ? {} : { "id": intID };
+
+
+            if (intID != undefined && intID != null)
+                url = url + "?id=" + intID;
+
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: postData,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    alert(JSON.stringify(data));
+                },
+                failure: function (errMsg) {
+                }
+            });
+        }
+
+
+
+        function goHome() {
+            var url = "@Url.Action("GoHome", "Ajax")";
+
+            var postData = {};
+
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: postData,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                },
+                failure: function (errMsg) {
+                }
+            });
+        }
+
+
+
+
+
+
+        $(document).ready(function () {
+
+            $("#testbtn").click(function () {
+                var val = $("#VillageId").val();
+                var intID = parseInt(val);
+
+                getVillages(intID);
+            });
+
+
+            $("#GoHome").click(function () {
+                goHome();
+            });
+        });
+    </script>
+}
+
+<div>
+    <h4>AjaxGo</h4>
+
+    <input type="number" id="VillageId" value="1" />
+    <button type="button" id="testbtn">btn123</button>
+
+    <hr />
+    <button type="button" id="GoHome">GoHome</button>
+</div>

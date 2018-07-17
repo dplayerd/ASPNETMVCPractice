@@ -1,0 +1,42 @@
+﻿@{
+    int siteID = Settings.Util.getSiteID();
+
+    var siteSkin = new Settings.Settings().getSiteSkin(siteID);
+
+    this.ViewBag.Title = "Home Page";
+    this.Layout = "~" + siteSkin.FilePath;
+}
+
+
+
+@*<iframe width="150" height="120" src="https://www.youtube.com/embed/GRHy0FgrJrw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*@
+
+
+<div>
+    <form method="post" action="@Url.Action("Created", "Home")">
+        <table>
+            <tr><th> 姓名 </th><td> <input type="text" name="Name" /> </td></tr>
+            <tr><th> 性別 </th><td> 男 <input type="radio" name="Gender" value="male" /> / 女 <input type="radio" name="Gender" value="female" /> </td></tr>
+            <tr><th> 區域 </th><td> <select name="Region"><option value="KH" selected="selected">高雄</option><option value="TP">台北</option></select> </td></tr>
+            <tr><th> 備註 </th><td> <textarea name="Desc"></textarea> </td></tr>
+            <tr><td colspan="2"> <button type="submit"> 送出 </button> </td></tr>
+        </table>
+    </form>
+</div>
+
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Getting started</h3>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+    </div>
+</div>

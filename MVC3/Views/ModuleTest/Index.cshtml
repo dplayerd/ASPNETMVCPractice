@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPractice.cshtml";
+
+
+    var mDef = new ClassLibrary1.Settings().getModuleDefine("Module1 Test");
+    var pView1 = mDef.Defines[""];
+    var pView2 = mDef.Defines["Second"];
+
+
+    string Url1 = Url.Action(pView1.Action);
+    string Url2 = Url.Action(pView2.Action);
+}
+
+<h4>This is Module Test Index</h4>
+
+<div>
+    <a href="@Url2" > 前往 </a>
+</div>

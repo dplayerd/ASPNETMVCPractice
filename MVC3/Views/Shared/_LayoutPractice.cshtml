@@ -1,0 +1,84 @@
+﻿@{ 
+    var set = new Settings.Settings();
+
+    int siteID = Settings.Util.getSiteID();
+    var siteSetting = set.getSiteSetting(siteID);
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>*@
+    <title>@siteSetting.SiteName</title>
+    @*<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/bootstrap.css")" />
+    <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/overcast/jquery-ui.css" />*@
+
+    <style type="text/css">
+        h2 {
+            text-align: right;
+            color: darkgray;
+            font-size: 1.3em;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        div {
+            padding: 3px;
+            margin: 1px;
+        }
+
+        .MainDiv {
+            border: 1px solid darkgray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <div id="header" class="MainDiv">
+                    <h2> this is Header div </h2>
+                    <img src="@Url.Content("~/" + siteSetting.Logo)" alt="logo" />
+                    @siteSetting.HeaderText
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div id="menu" class="MainDiv">
+                    <h2> this is Menu div </h2>
+                    @Html.Action("Menu", "Navigation")
+                </div>
+            </td>
+            <td>
+                <div class="MainDiv">
+                    <h2> this is MainBody div </h2>
+                    @RenderBody()
+                </div>
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td colspan="2">
+                <div id="Footer" class="MainDiv">
+                    @siteSetting.FooterText
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script src="@Url.Content("~/Scripts/jQuery.min.js")"></script>
+    @*<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>*@
+    @RenderSection("ScriptArea", false)
+</body>
+</html>
