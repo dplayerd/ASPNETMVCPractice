@@ -13,6 +13,25 @@ namespace MVC3
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "PageRouting",
+                url: "{SiteName}/{PageName}/{ModuleID}/{ModuleCtlName}/{Parameters}",
+                defaults:
+                    new
+                    {
+                        controller = "PageMenu",
+                        action = "Default",
+
+                        SiteName = UrlParameter.Optional,
+                        PageName = UrlParameter.Optional,
+                        ModuleID = UrlParameter.Optional,
+                        ModuleCtlName = UrlParameter.Optional,
+                        Parameters = UrlParameter.Optional
+                    }
+            );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
