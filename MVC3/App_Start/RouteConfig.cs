@@ -13,7 +13,14 @@ namespace MVC3
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //----- Try path -----
+            // 新增前台用路徑
+            //url: "{SiteName}/{PageName}/
+            // 考慮一下多 DOMAIN 對站台 (site1.www.xxxx.com / site2.www.xxxx.com)
 
+
+
+            // 應改為後台用路徑
             routes.MapRoute(
                 name: "PageRouting",
                 url: "{SiteName}/{PageName}/{ModuleID}/{ModuleCtlName}/{Parameters}",
@@ -30,6 +37,7 @@ namespace MVC3
                         Parameters = UrlParameter.Optional
                     }
             );
+            //----- Try path -----
 
 
             routes.MapRoute(
