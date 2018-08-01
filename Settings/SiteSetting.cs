@@ -8,9 +8,14 @@ namespace Settings
 {
     public class SiteSetting
     {
+        public List<string> DomainName { get; set; }
+
+        public bool WillLockDomain { get; set; }
 
         public int SiteID { get; set; }
         public string SiteName { get; set; }
+
+
         public string Logo { get; set; }
         public string HeaderText { get; set; }
         public string FooterText { get; set; }
