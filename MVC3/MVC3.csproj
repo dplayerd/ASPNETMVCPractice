@@ -153,6 +153,7 @@
     <Compile Include="Controllers\ModuleTestController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\PageMenuController.cs" />
+    <Compile Include="Controllers\PaneModuleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +198,7 @@
     <Folder Include="Scripts\" />
     <Folder Include="Views\Ajax\" />
     <Folder Include="Views\Navigation\" />
+    <Folder Include="Views\PaneModule\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css.map" />
