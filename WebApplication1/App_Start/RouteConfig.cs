@@ -33,7 +33,7 @@ namespace WebApplication1
 
 
             routes.Add(
-                new Route123(
+                new RoutePractice(
                     domain: "{domain1}",
                     url: "{controller}/{action}/{id}",
                     defaults: new

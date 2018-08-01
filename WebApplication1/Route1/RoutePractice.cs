@@ -9,7 +9,7 @@ using WebApplication1.YourApplication;
 
 namespace WebApplication1.Route1
 {
-    public class Route123 : Route
+    public class RoutePractice : Route
     {
         private const string DomainRouteMatchKey = "DomainRoute.Match";
         private const string DomainRouteInsertionsKey = "DomainRoute.Insertions";
@@ -17,22 +17,22 @@ namespace WebApplication1.Route1
         private Regex _domainRegex;
         public string Domain { get; private set; }
 
-        public Route123(string domain, string url, RouteValueDictionary defaults)
+        public RoutePractice(string domain, string url, RouteValueDictionary defaults)
             : this(domain, url, defaults, new MvcRouteHandler())
         {
         }
 
-        public Route123(string domain, string url, object defaults)
+        public RoutePractice(string domain, string url, object defaults)
             : this(domain, url, new RouteValueDictionary(defaults), new MvcRouteHandler())
         {
         }
 
-        public Route123(string domain, string url, object defaults, IRouteHandler routeHandler)
+        public RoutePractice(string domain, string url, object defaults, IRouteHandler routeHandler)
             : this(domain, url, new RouteValueDictionary(defaults), routeHandler)
         {
         }
 
-        public Route123(string domain, string url, RouteValueDictionary defaults, IRouteHandler routeHandler)
+        public RoutePractice(string domain, string url, RouteValueDictionary defaults, IRouteHandler routeHandler)
             : base(url, defaults, routeHandler)
         {
             Domain = domain;
@@ -43,40 +43,48 @@ namespace WebApplication1.Route1
         {
             var requestDomain = httpContext.Request.Url.Host;
 
-            var domainMatch = _domainRegex.Match(requestDomain);
-            if (!domainMatch.Success)
-                return null;
-
-            var existingMatch = httpContext.Items[DomainRouteMatchKey] as string;
-
-            if (existingMatch == null)
-                httpContext.Items[DomainRouteMatchKey] = Domain;
-            else if (existingMatch != Domain)
-                return null;
 
             var data = base.GetRouteData(httpContext);
-            if (data == null)
-                return null;
 
-            var myInsertions = new HashSet<string>();
 
-            for (var i = 1; i < domainMatch.Groups.Count; i++)
-            {
-                var group = domainMatch.Groups[i];
-                if (group.Success)
-                {
-                    var key = _domainRegex.GroupNameFromNumber(i);
-                    if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(group.Value))
-                    {
-                        // could throw here if data.Values.ContainsKey(key) if we wanted to prevent multiple matches
-                        data.Values[key] = group.Value;
-                        myInsertions.Add(key);
-                    }
-                }
-            }
-
-            httpContext.Items[DomainRouteInsertionsKey] = myInsertions;
+            data.Values["domain1"] = "www.P36.com";
             return data;
+
+
+            //var domainMatch = _domainRegex.Match(requestDomain);
+            //if (!domainMatch.Success)
+            //    return null;
+
+            //var existingMatch = httpContext.Items[DomainRouteMatchKey] as string;
+
+            //if (existingMatch == null)
+            //    httpContext.Items[DomainRouteMatchKey] = Domain;
+            //else if (existingMatch != Domain)
+            //    return null;
+
+            //var data = base.GetRouteData(httpContext);
+            //if (data == null)
+            //    return null;
+
+            //var myInsertions = new HashSet<string>();
+
+            //for (var i = 1; i < domainMatch.Groups.Count; i++)
+            //{
+            //    var group = domainMatch.Groups[i];
+            //    if (group.Success)
+            //    {
+            //        var key = _domainRegex.GroupNameFromNumber(i);
+            //        if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(group.Value))
+            //        {
+            //            // could throw here if data.Values.ContainsKey(key) if we wanted to prevent multiple matches
+            //            data.Values[key] = group.Value;
+            //            myInsertions.Add(key);
+            //        }
+            //    }
+            //}
+
+            //httpContext.Items[DomainRouteInsertionsKey] = myInsertions;
+            //return data;
         }
 
         public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
