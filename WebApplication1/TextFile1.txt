@@ -1,0 +1,16 @@
+﻿https://gist.github.com/IDisposable/77f11c6f7693f9d181bb
+
+https://blog.maartenballiauw.be/post/2009/05/20/aspnet-mvc-domain-routing.html
+https://blog.maartenballiauw.be/post/2015/02/17/domain-routing-and-resolving-current-tenant-with-aspnet-mvc-6-aspnet-5.html
+
+https://stackoverflow.com/questions/28644293/domain-routing-in-mvc5
+
+https://haacked.com/archive/2011/01/30/introducing-routemagic.aspx/
+https://www.nuget.org/packages/RouteMagic/
+https://github.com/Haacked/RouteMagic
+
+http://www.matrichard.com/post/asp.net-mvc-5-routing-with-subdomain
+
+https://benjii.me/2015/02/subdomain-routing-in-asp-net-mvc/
+
+http://www.matrichard.com/post/asp.net-mvc-5-routing-with-subdomain
