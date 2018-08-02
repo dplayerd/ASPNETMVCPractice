@@ -47,7 +47,10 @@ namespace WebApplication1.Route1
             var data = base.GetRouteData(httpContext);
 
 
-            data.Values["domain1"] = "www.P36.com";
+            //data.Values["domain1"] = "www.P36.com";
+
+
+            data.Values["domain1"] = httpContext.Request.Url.Authority;
             return data;
 
 
