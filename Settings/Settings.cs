@@ -66,12 +66,8 @@ namespace Settings
             if (_Menus != null)
                 return;
 
-            Settings._Menus = new List<Menu>()
-            {
-                new Menu(1, 1, "Google", "https://www.google.com/"),
-                new Menu(1, 2, "Home",  "Index", "Home"),
-                new Menu(1, 3, "Ajax", "AjaxGo", "Home"),
-            };
+
+            Settings._Menus = JsonReader.ReadFromFile<List<Menu>>(JsonReader.Menu);
         }
 
 
@@ -97,21 +93,7 @@ namespace Settings
                 return;
 
 
-            Settings._siteSettings = new List<SiteSetting>()
-            {
-                new SiteSetting()
-                {
-                    SiteID = 1,
-                    SiteName = "優秀的某間科技",
-                    SiteOwner = "host",
-                    SiteOwnerID = 1,
-                    Logo = "/Images/Logo.png",
-                    HeaderText = "歡迎來到某間科技公司",
-                    FooterText = "某間科技版權所有 © 2015 Some All Rights Reserved",
-
-                    DefaultSkinID = 1
-                }
-            };
+            Settings._siteSettings = JsonReader.ReadFromFile<List<SiteSetting>>(JsonReader.Site);
         }
 
 

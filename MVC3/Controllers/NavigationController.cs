@@ -9,13 +9,18 @@ namespace MVC3.Controllers
 {
     public class NavigationController : Controller
     {
-        // GET: Navigation
-        public ActionResult Menu()
+        private static List<MenuViewModel> menuList = null;
+
+
+        public NavigationController()
         {
+            if (NavigationController.menuList != null)
+                return;
+
+
             var list = new Settings.Settings().getMenus(0);
 
-
-            List<MenuViewModel> menuList =
+            menuList =
                 (from item in list
                  select
                      new MenuViewModel()
@@ -30,50 +35,19 @@ namespace MVC3.Controllers
                          SubMenu = new List<MenuViewModel>()
                      }
                 ).ToList();
+        }
 
 
-            ////----- Menu1 -----
-            //MenuViewModel menu = new MenuViewModel() { MenuID = 1, Action = "Index", Controller = "Dashboard", IsAction = true, Class = "class", SubMenu = null, Title = "Dashboard" };
-
-            //menuList.Add(menu);
-            ////----- Menu1 -----
-
-
+        // GET: Navigation
+        public ActionResult Menu()
+        {
+            return PartialView("_NavigationPartial", NavigationController.menuList);
+        }
 
 
-            ////----- Menu1 -----
-            //menu = new MenuViewModel() { MenuID = 2, IsAction = false, Class = "class", Link = "javascript:void(0);", Title = "Application Setup" };
-
-            //menu.SubMenu = new List<MenuViewModel>() {
-            //    new MenuViewModel() { Action = "Register", Controller = "Account", IsAction = true, Class = "", SubMenu = null, Title = "User Manager" },
-            //    new MenuViewModel() { Action = "Index", Controller = "Manage", IsAction = true, Class = "", SubMenu = null, Title = "Manage" },
-            //    new MenuViewModel() { Action = "ChangePassword", Controller = "Manage", IsAction = true, Class = "", SubMenu = null, Title = "Change Password" },
-            //    new MenuViewModel() { IsAction = false, Link = "javascript:document.getElementById('logoutForm').submit()", Class = "", SubMenu = null, Title = "Logoff" }
-            //};
-
-            //menuList.Add(menu);
-            ////----- Menu1 -----
-
-
-
-
-            ////----- Menu1 -----
-            //menu = new MenuViewModel()
-            //{
-            //    MenuID = 1,
-            //    Action = "AjaxGo",
-            //    Controller = "Home",
-            //    IsAction = true,
-            //    Class = "class",
-            //    SubMenu = null,
-            //    Title = "AjaxGo"
-            //};
-
-            //menuList.Add(menu);
-            ////----- Menu1 -----
-
-
-            return PartialView("_NavigationPartial", menuList);
+        public ActionResult Breadcrumbs()
+        {
+            throw new NotImplementedException();
         }
     }
 }
