@@ -8,6 +8,10 @@ namespace Settings
 {
     public class Menu
     {
+        #region "Constructor"
+        internal Menu()
+        { }
+
         private Menu(int SiteID, int MenuID, string Title)
         {
             this.MenuID = MenuID;
@@ -37,15 +41,17 @@ namespace Settings
             this.Link = Link;
             this.IsAction = false;
         }
+        #endregion
 
 
 
-        public int MenuID { get; private set; }
-        public string Title { get; private set; }
-        public string Action { get; private set; }
-        public string Controller { get; private set; }
-        public bool IsAction { get; private set; }
-        public string Link { get; private set; }
+        #region "Property"
+        public int MenuID { get; set; }
+        public string Title { get; set; }
+        public string Action { get; set; }
+        public string Controller { get; set; }
+        public bool IsAction { get; set; }
+        public string Link { get; set; }
 
         //public List<Menu> SubMenu { get; set; }
 
@@ -53,5 +59,6 @@ namespace Settings
 
 
         public int SiteID { get; set; }
+        #endregion
     }
 }

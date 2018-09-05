@@ -195,7 +195,6 @@
     <Content Include="Views\ModuleTest\GetView2.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Ajax\" />
@@ -207,6 +206,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="App_Data\Menu.json" />
+    <Content Include="App_Data\Site.json" />
     <None Include="packages.config" />
     <Content Include="Views\PageMenu\Default.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />

@@ -32,7 +32,9 @@ namespace Settings
 
 
             string FilePath = dicDataFilePath[SettingFileName];
-            return JsonConvert.DeserializeObject<T>(FilePath);
+            string FileContent = File.ReadAllText(FilePath);
+
+            return JsonConvert.DeserializeObject<T>(FileContent);
         }
     }
 }

@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Settings", "Settings\Settin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{6F8B6C6D-3C1C-4777-A903-5FADA6670E0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReturnMultiPartialView", "ReturnMultiPartialView\ReturnMultiPartialView.csproj", "{31020034-CC60-42C6-AFD2-23819CFC890C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{325C9B5B-D726-4701-9666-C405240562F3}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{6F8B6C6D-3C1C-4777-A903-5FADA6670E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F8B6C6D-3C1C-4777-A903-5FADA6670E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F8B6C6D-3C1C-4777-A903-5FADA6670E0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31020034-CC60-42C6-AFD2-23819CFC890C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31020034-CC60-42C6-AFD2-23819CFC890C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31020034-CC60-42C6-AFD2-23819CFC890C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31020034-CC60-42C6-AFD2-23819CFC890C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{325C9B5B-D726-4701-9666-C405240562F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{325C9B5B-D726-4701-9666-C405240562F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325C9B5B-D726-4701-9666-C405240562F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
