@@ -32,6 +32,7 @@ namespace MVC3.Controllers
                          Class = "",
                          IsAction = item.IsAction,
                          Link = item.Link,
+                         PageFilePath = item.PageFilePath,
                          SubMenu = new List<MenuViewModel>()
                      }
                 ).ToList();

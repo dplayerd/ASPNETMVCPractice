@@ -15,6 +15,10 @@
                     {
                         <a href="@Url.Action(menu.Action, menu.Controller)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
                     }
+                    else if (!string.IsNullOrEmpty(menu.PageFilePath))
+                    {
+                        <a href="@Url.Action(menu.Action, menu.Controller, menu.Title)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
+                    }
                     else
                     {
                         <a href="@Html.Raw(menu.Link)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
@@ -26,6 +30,10 @@
                             if (subMenu.IsAction)
                             {
                                 <li><a href="@Url.Action(subMenu.Action, subMenu.Controller)">@subMenu.Title</a></li>
+                            }
+                            else if (!string.IsNullOrEmpty(menu.PageFilePath))
+                            {
+                                <a href="@Url.Action(menu.Action, menu.Controller, menu.Title)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
                             }
                             else
                             {
@@ -40,6 +48,10 @@
                 if (menu.IsAction)
                 {
                     <li><a href="@Url.Action(menu.Action, menu.Controller)" class="@menu.Class"> @Html.Raw(menu.Title)</a></li>
+                }
+                else if (!string.IsNullOrEmpty(menu.PageFilePath))
+                {
+                    <a href="@Url.Action(menu.Action, menu.Controller, menu.Title)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
                 }
                 else
                 {

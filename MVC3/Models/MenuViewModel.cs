@@ -21,6 +21,8 @@ namespace MVC3.Models
 
         public string Class { get; set; }
 
+        public string PageFilePath { get; set; }
+
         public List<MenuViewModel> SubMenu { get; set; }
     }
 }

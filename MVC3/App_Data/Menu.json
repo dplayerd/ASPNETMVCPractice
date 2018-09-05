@@ -1,32 +1,39 @@
 ﻿[
-  {
-    "MenuID": 1,
-    "Title": "Google",
-    "Action": null,
-    "Controller": null,
-    "IsAction": false,
-    "Link": "https://www.google.com/",
-    "MenuSkinID": null,
-    "SiteID": 0
-  },
-  {
-    "MenuID": 2,
-    "Title": "Home",
-    "Action": "Index",
-    "Controller": "Home",
-    "IsAction": true,
-    "Link": null,
-    "MenuSkinID": null,
-    "SiteID": 0
-  },
-  {
-    "MenuID": 3,
-    "Title": "Ajax",
-    "Action": "AjaxGo",
-    "Controller": "Home",
-    "IsAction": true,
-    "Link": null,
-    "MenuSkinID": null,
-    "SiteID": 0
-  }
+    {
+        "MenuID": 1,
+        "Title": "Google",
+        "Action": null,
+        "Controller": null,
+        "Link": "https://www.google.com/",
+        "MenuSkinID": null,
+        "SiteID": 0
+    },
+    {
+        "MenuID": 2,
+        "Title": "Home",
+        "Action": "Index",
+        "Controller": "Home",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 0
+    },
+    {
+        "MenuID": 3,
+        "Title": "Ajax",
+        "Action": "AjaxGo",
+        "Controller": "Home",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 0
+    },
+    {
+        "MenuID": 4,
+        "Title": "Static",
+        "Action": "Static",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 0,
+        "PageFilePath": "F:\\PersonalProjects\\ASPNETMVCPractice\\ASPNETMVCPractice\\MVC3\\StaticPage\\Static1.html"
+    }
 ]

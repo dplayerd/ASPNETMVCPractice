@@ -31,7 +31,7 @@ namespace Settings
             this.IsAction = true;
         }
 
-        /// <summary> 靜態連結 </summary>
+        /// <summary> 外部靜態連結 </summary>
         /// <param name="MenuID"></param>
         /// <param name="Name"></param>
         /// <param name="Link"></param>
@@ -40,6 +40,13 @@ namespace Settings
         {
             this.Link = Link;
             this.IsAction = false;
+        }
+
+
+        public Menu(int SiteID, int MenuID, string Name, string PageFilePath, int CacheTime) :
+            this(SiteID, MenuID, Name)
+        {
+            this.PageFilePath = PageFilePath;
         }
         #endregion
 
@@ -53,12 +60,11 @@ namespace Settings
         public bool IsAction { get; set; }
         public string Link { get; set; }
 
-        //public List<Menu> SubMenu { get; set; }
-
         public int? MenuSkinID { get; set; }
 
-
         public int SiteID { get; set; }
+
+        public string PageFilePath { get; set; }
         #endregion
     }
 }
