@@ -27,6 +27,8 @@ namespace Settings
         public int SiteOwnerID { get; set; }
 
         public int DefaultSkinID { get; set; }
+
+        public bool IsDefault { get; set; }
         #endregion
 
 

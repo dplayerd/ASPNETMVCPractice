@@ -1,8 +1,12 @@
-﻿@{ 
-    var set = new Settings.Settings();
+﻿@using Utility;
+@{ 
 
-    int siteID = Settings.Util.getSiteID();
-    var siteSetting = set.getSiteSetting(siteID);
+
+    var dto = UriHelper.getCurrentUri();
+
+
+    var siteSetting = dto.SiteInfo;
+
 
 }
 
@@ -18,6 +22,20 @@
     <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/overcast/jquery-ui.css" />*@
 
     <style type="text/css">
+        body {
+            background-color: slategray;
+            color: white;
+        }
+
+        a {
+            font-size: 1.5em;
+            color: white;            
+        }
+
+        a:hover {
+            color: tomato;
+        }
+
         h2 {
             text-align: right;
             color: darkgray;

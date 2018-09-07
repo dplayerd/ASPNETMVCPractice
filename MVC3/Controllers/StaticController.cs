@@ -9,7 +9,7 @@ namespace MVC3.Controllers
     public class StaticController : Controller
     {
         // GET: Static
-        public ActionResult Index(string MenuTitle)
+        public ActionResult Page(string MenuTitle)
         {
             var list = new Settings.Settings().getMenus(0);
 

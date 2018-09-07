@@ -10,7 +10,7 @@ namespace Settings
     {
         public static int getSiteID()
         {
-            return 1;
+            return 0;
         }
 
 

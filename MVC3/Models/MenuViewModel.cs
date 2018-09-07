@@ -9,6 +9,8 @@ namespace MVC3.Models
     {
         public int MenuID { get; set; }
 
+        public int SiteID { get; set; }
+
         public string Title { get; set; }
 
         public string Action { get; set; }
@@ -22,6 +24,8 @@ namespace MVC3.Models
         public string Class { get; set; }
 
         public string PageFilePath { get; set; }
+
+        public bool IsDefault { get; set; }
 
         public List<MenuViewModel> SubMenu { get; set; }
     }

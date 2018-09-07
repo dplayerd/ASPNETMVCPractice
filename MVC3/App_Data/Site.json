@@ -1,12 +1,14 @@
 ﻿[
-  {
-    "SiteID": 1,
-    "SiteName": "優秀的某間科技",
-    "SiteOwner": "host",
-    "SiteOwnerID": 1,
-    "Logo": "~/Images/Logo.png",
-    "HeaderText": "歡迎來到某間科技公司",
-    "FooterText": "某間科技版權所有 © 2015 Some All Rights Reserved",
-    "DefaultSkinID": 1
-  }
+    {
+        "SiteID": 0,
+        "SiteName": "Main",
+        "Title": "優秀的某間科技",
+        "SiteOwner": "host",
+        "SiteOwnerID": 1,
+        "Logo": "Images/Logo.png",
+        "HeaderText": "歡迎來到某間科技公司",
+        "FooterText": "某間科技版權所有 © 2015 Some All Rights Reserved",
+        "DefaultSkinID": 1,
+        "IsDefault": true
+    }
 ]

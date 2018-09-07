@@ -1,6 +1,32 @@
 ﻿@using MVC3.Models
 @model IEnumerable<MenuViewModel>
 
+@{
+    string getPageUrl(MenuViewModel menu)
+    {
+        var uriDTO = Utility.UriHelper.getCurrentUri();
+
+
+
+        // 回傳靜態內容用
+        if (!string.IsNullOrEmpty(menu.PageFilePath))
+            //return Url.Action("Page", "Static", new { MenuTitle = menu.Title });
+            return Utility.UriHelper.genStaticPageUri(menu.SiteID, menu.MenuID);
+
+
+        // 外部連結用
+        if (!string.IsNullOrEmpty(menu.Link))
+            return menu.Link;
+
+
+        // 正常內部連結
+        var url1 = Utility.UriHelper.genUri(menu.SiteID, menu.MenuID);
+
+
+
+        return null;
+    }
+}
 
 <!--- Sidemenu -->
 <div id="sidebar-menu">
@@ -10,53 +36,22 @@
             if (menu.SubMenu != null)
             {
                 <li class="has_sub">
-
-                    @if (menu.IsAction)
-                    {
-                        <a href="@Url.Action(menu.Action, menu.Controller)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
-                    }
-                    else if (!string.IsNullOrEmpty(menu.PageFilePath))
-                    {
-                        <a href="@Url.Action(menu.Action, menu.Controller, menu.Title)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
-                    }
-                    else
-                    {
-                        <a href="@Html.Raw(menu.Link)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
-                    }
-
+                    <a href="@Html.Raw(getPageUrl(menu))">@menu.Title</a>
                     <ul class="list-unstyled">
                         @foreach (MenuViewModel subMenu in menu.SubMenu)
                         {
-                            if (subMenu.IsAction)
-                            {
-                                <li><a href="@Url.Action(subMenu.Action, subMenu.Controller)">@subMenu.Title</a></li>
-                            }
-                            else if (!string.IsNullOrEmpty(menu.PageFilePath))
-                            {
-                                <a href="@Url.Action(menu.Action, menu.Controller, menu.Title)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
-                            }
-                            else
-                            {
-                                <li><a href="@Html.Raw(subMenu.Link)"> @Html.Raw(subMenu.Title)</a></li>
-                            }
+                            <li>
+                                <a href="@Html.Raw(getPageUrl(menu))">@menu.Title</a>
+                            </li>
                         }
                     </ul>
                 </li>
             }
             else
             {
-                if (menu.IsAction)
-                {
-                    <li><a href="@Url.Action(menu.Action, menu.Controller)" class="@menu.Class"> @Html.Raw(menu.Title)</a></li>
-                }
-                else if (!string.IsNullOrEmpty(menu.PageFilePath))
-                {
-                    <a href="@Url.Action(menu.Action, menu.Controller, menu.Title)" class="@menu.Class"> @Html.Raw(menu.Title)</a>
-                }
-                else
-                {
-                    <li><a href="@Html.Raw(menu.Link)" class="@menu.Class"> @Html.Raw(menu.Title)</a></li>
-                }
+                <li>
+                    <a href="@Html.Raw(getPageUrl(menu))">@menu.Title</a>
+                </li>
             }
         }
     </ul>

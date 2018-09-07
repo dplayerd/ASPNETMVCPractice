@@ -221,6 +221,10 @@
       <Project>{6efa9d64-21d3-4a9f-910a-a789cf7a35e7}</Project>
       <Name>Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{390b022d-1369-406c-ba91-f6139b085333}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

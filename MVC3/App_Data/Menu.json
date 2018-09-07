@@ -6,7 +6,9 @@
         "Controller": null,
         "Link": "https://www.google.com/",
         "MenuSkinID": null,
-        "SiteID": 0
+        "SiteID": 0,
+        "IsAction": false,
+        "IsDefault": false
     },
     {
         "MenuID": 2,
@@ -15,7 +17,9 @@
         "Controller": "Home",
         "Link": null,
         "MenuSkinID": null,
-        "SiteID": 0
+        "SiteID": 0,
+        "IsAction": true,
+        "IsDefault":  true
     },
     {
         "MenuID": 3,
@@ -24,16 +28,20 @@
         "Controller": "Home",
         "Link": null,
         "MenuSkinID": null,
-        "SiteID": 0
+        "SiteID": 0,
+        "IsAction": true,
+        "IsDefault": false
     },
     {
         "MenuID": 4,
-        "Title": "Static",
-        "Action": "Static",
+        "Title": "Static_1",
+        "Action": "Page",
         "Controller": "Static",
         "Link": null,
         "MenuSkinID": null,
         "SiteID": 0,
-        "PageFilePath": "F:\\PersonalProjects\\ASPNETMVCPractice\\ASPNETMVCPractice\\MVC3\\StaticPage\\Static1.html"
+        "PageFilePath": "F:\\PersonalProjects\\ASPNETMVCPractice\\ASPNETMVCPractice\\MVC3\\StaticPage\\Static1.html",
+        "IsAction": true,
+        "IsDefault": false
     }
 ]

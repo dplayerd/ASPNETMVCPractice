@@ -1,4 +1,5 @@
 ﻿using MVC3.Models;
+using Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace MVC3.Controllers
                 return;
 
 
-            var list = new Settings.Settings().getMenus(0);
+            List<Menu> list = new Settings.Settings().getMenus(0);
 
             menuList =
                 (from item in list
@@ -26,6 +27,7 @@ namespace MVC3.Controllers
                      new MenuViewModel()
                      {
                          MenuID = item.MenuID,
+                         SiteID = item.SiteID,
                          Title = item.Title,
                          Action = item.Action,
                          Controller = item.Controller,

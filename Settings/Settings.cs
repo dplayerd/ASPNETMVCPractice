@@ -73,13 +73,59 @@ namespace Settings
 
         public Menu getMenu(int MenuID)
         {
+            if (MenuID <= -1)
+                return null;
+
             return Settings._Menus.Where(obj=>obj.MenuID == MenuID).FirstOrDefault();
         }
 
 
         public List<Menu> getMenus(int SiteID)
         {
+            if (SiteID <= -1)
+                return null;
+
             return Settings._Menus;
+        }
+
+
+        public Menu getMenu(string MenuName, int SiteID = 0)
+        {
+            if (SiteID <= -1)
+                return null;
+
+            // 找目標網頁
+            Menu menu = Settings._Menus.Where(obj => string.Compare(obj.Title, MenuName, true) == 0 && obj.SiteID == SiteID).FirstOrDefault();
+
+            if (menu != null)
+                return menu;
+
+
+            // 如果找不到，回預設值
+            menu = Settings._Menus.Where(obj => obj.IsDefault == true).FirstOrDefault();
+
+            if (menu != null)
+                return menu;
+
+
+            // 如果完全沒東西回傳，回 NULL
+            return null;
+        }
+
+
+        /// <summary> 預設值 </summary>
+        /// <param name="SiteID"></param>
+        /// <returns></returns>
+        public Menu getDefaultMenu(int SiteID)
+        {
+            // 如果找不到，回
+            Menu menu = Settings._Menus.Where(obj => obj.IsDefault == true && obj.SiteID == SiteID).FirstOrDefault();
+
+            if (menu != null)
+                return menu;
+
+            // 如果完全沒東西回傳，回 NULL
+            return null;
         }
         #endregion
 
@@ -99,7 +145,39 @@ namespace Settings
 
         public SiteSetting getSiteSetting(int SiteID)
         {
+            if (SiteID <= -1)
+                return null;
+
             return Settings._siteSettings.Where(obj => obj.SiteID == SiteID).FirstOrDefault();
+        }
+
+        public SiteSetting getSiteSetting(string SiteName)
+        {
+            // 找目標網頁
+            SiteSetting site = Settings._siteSettings.Where(obj => string.Compare(obj.SiteName, SiteName, true) == 0).FirstOrDefault();
+
+            if (site != null)
+                return site;
+
+
+            // 如果找不到，回預設值
+            return this.getDefaultSiteSetting();
+        }
+
+
+        /// <summary> 預設值 </summary>
+        /// <returns></returns>
+        public SiteSetting getDefaultSiteSetting()
+        {
+            // 找目標網頁
+            SiteSetting site = Settings._siteSettings.Where(obj => obj.IsDefault == true).FirstOrDefault();
+
+            if (site != null)
+                return site;
+
+
+            // 如果完全沒東西回傳，回 NULL
+            return null;
         }
         #endregion
 

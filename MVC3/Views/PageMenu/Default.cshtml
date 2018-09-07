@@ -1,14 +1,14 @@
 ﻿
 @{
     ViewBag.Title = "Default";
-    ViewBag.TotalUrl =
+    ViewBag.DomainName =
         Request.Url.Scheme + "://" + Request.Url.Authority;
 }
 
 <h2>Default</h2>
-@ViewBag.TotalUrl <br />
-@ViewBag.Title ::: Title<br/>
-@ViewBag.SiteName ::: SiteName<br/>
+@ViewBag.DomainName ::: DomainName <br />
+@ViewBag.Title ::: Title<br />
+@ViewBag.SiteName ::: SiteName<br />
 @ViewBag.PageName ::: PageName<br />
 @ViewBag.ModuleID ::: ModuleID<br />
 @ViewBag.ModuleCtlName ::: ModuleCtlName<br />
