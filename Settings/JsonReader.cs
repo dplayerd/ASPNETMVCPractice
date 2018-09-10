@@ -13,6 +13,7 @@ namespace Settings
     {
         internal const string Site = "SITE";
         internal const string Menu = "MENU";
+        internal const string Module = "MODULE";
 
 
         private static Dictionary<string, string> dicDataFilePath = null;
@@ -25,8 +26,9 @@ namespace Settings
 
             dicDataFilePath = new Dictionary<string, string>()
             {
-                { JsonReader.Site,System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Site.json") },
-                { JsonReader.Menu,System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Menu.json") }
+                { JsonReader.Site, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Site.json") },
+                { JsonReader.Menu, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Menu.json") },
+                { JsonReader.Module, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Module.json") }
             };
         }
 

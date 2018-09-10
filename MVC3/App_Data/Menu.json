@@ -43,5 +43,13 @@
         "PageFilePath": "~/StaticPage/Static1.html",
         "IsAction": true,
         "IsDefault": false
+    },
+    {
+        "MenuID": 5,
+        "Title": "HTML Page",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 0,
+        "IsAction": true
     }
 ]

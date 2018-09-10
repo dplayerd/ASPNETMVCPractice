@@ -30,6 +30,7 @@ namespace Utility
 
 
             UriDTO dto = new UriDTO();
+            dto.Uri = uri;
             dto.DomainName = uri.Scheme + "://" + uri.Authority; 
 
             var mgr = new Settings.Settings();
@@ -41,6 +42,8 @@ namespace Utility
             if (uri.Segments.Length >= 2)
             {
                 string SiteName = uri.Segments[1].Trim('/');
+                SiteName = System.Web.HttpUtility.UrlDecode(SiteName);
+
                 siteSetting = mgr.getSiteSetting(SiteName);
             }
             else
@@ -58,6 +61,7 @@ namespace Utility
             if (uri.Segments.Length >= 3)
             {
                 string MenuName = uri.Segments[2].Trim('/');
+                MenuName = System.Web.HttpUtility.UrlDecode(MenuName);
 
                 // 如果是靜態頁時
                 if (MenuName.CompareTo("Static") == 0 && uri.Segments.Length >= 5)

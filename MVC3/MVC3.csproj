@@ -151,6 +151,7 @@
     <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HtmlModuleController.cs" />
     <Compile Include="Controllers\ModuleTestController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\PageMenuController.cs" />
@@ -166,10 +167,14 @@
     <Compile Include="Route1\SelfDefineRoute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Athena.txt" />
+    <Content Include="Content\Athena.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Aegis.jpg" />
+    <Content Include="Content\images\Athena.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -213,9 +218,11 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="App_Data\Menu.json" />
     <Content Include="App_Data\Site.json" />
+    <Content Include="App_Data\Module.json" />
     <None Include="packages.config" />
     <Content Include="Views\PageMenu\Default.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />
+    <Content Include="Views\HtmlModule\ViewDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Settings\Settings.csproj">

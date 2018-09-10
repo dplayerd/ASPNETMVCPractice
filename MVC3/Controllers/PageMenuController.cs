@@ -56,7 +56,12 @@ namespace MVC3.Controllers
 
 
                 if (pageInfo.IsAction && !pageInfo.IsDefault)
+                {
+                    if (dto.PageInfo.Controller == "HtmlModule")
+                        return new HtmlModuleController().ViewDetail(pageInfo.MenuID);
+
                     return RedirectToAction(dto.PageInfo.Action, dto.PageInfo.Controller);
+                }
 
 
                 if (pageInfo.IsDefault)

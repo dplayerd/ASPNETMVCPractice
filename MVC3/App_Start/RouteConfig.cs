@@ -21,20 +21,20 @@ namespace MVC3
 
 
 
-            // 應改為後台用路徑
-            routes.Add(
-                   new SelfDefineRoute(
-                       Domain: "{domain1}",
-                       url: "{controller}/{action}/{id}",
-                       defaults: new
-                       {
-                           controller = "Home",
-                           action = "Index",
+            //// 應改為後台用路徑
+            //routes.Add(
+            //       new SelfDefineRoute(
+            //           Domain: "{domain1}",
+            //           url: "{controller}/{action}/{id}",
+            //           defaults: new
+            //           {
+            //               controller = "Home",
+            //               action = "Index",
 
-                           id = UrlParameter.Optional
-                       }
-                   )
-               );
+            //               id = UrlParameter.Optional
+            //           }
+            //       )
+            //   );
 
 
             routes.MapRoute(

@@ -1,7 +1,5 @@
 ﻿@using Utility;
 @{ 
-
-
     var dto = UriHelper.getCurrentUri();
 
 
@@ -20,40 +18,9 @@
     <title>@siteSetting.SiteName</title>
     @*<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/bootstrap.css")" />
     <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/overcast/jquery-ui.css" />*@
-
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/Athena.css")" />
     <style type="text/css">
-        body {
-            background-color: slategray;
-            color: white;
-        }
 
-        a {
-            font-size: 1.5em;
-            color: white;            
-        }
-
-        a:hover {
-            color: tomato;
-        }
-
-        h2 {
-            text-align: right;
-            color: darkgray;
-            font-size: 1.3em;
-        }
-
-        table {
-            width: 100%;
-        }
-
-        div {
-            padding: 3px;
-            margin: 1px;
-        }
-
-        .MainDiv {
-            border: 1px solid darkgray;
-        }
     </style>
 </head>
 <body>
@@ -62,7 +29,7 @@
             <td colspan="2">
                 <div id="header" class="MainDiv">
                     <h2> this is Header div </h2>
-                    <img src="@Url.Content("~/" + siteSetting.Logo)" alt="logo" />
+                    <img src="@Url.Content("~/" + siteSetting.Logo)" width="150px" height="150px" alt="logo" />
                     @siteSetting.HeaderText
                 </div>
             </td>
