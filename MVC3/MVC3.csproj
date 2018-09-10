@@ -167,7 +167,9 @@
     <Compile Include="Route1\SelfDefineRoute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Athena.txt" />
+    <Content Include="App_Data\Athena.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Athena.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -216,9 +218,15 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="App_Data\Menu.json" />
-    <Content Include="App_Data\Site.json" />
-    <Content Include="App_Data\Module.json" />
+    <Content Include="App_Data\Menu.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Module.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Site.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\PageMenu\Default.cshtml" />
     <Content Include="Views\Calendar\Index.cshtml" />

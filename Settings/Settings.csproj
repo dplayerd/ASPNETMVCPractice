@@ -56,7 +56,26 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Menu.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Module.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Site.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Athena.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties App_3Data_4Module_1json__JSONSchema="http://json.schemastore.org/chutzpah" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

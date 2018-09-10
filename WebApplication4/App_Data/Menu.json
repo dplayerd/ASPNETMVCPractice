@@ -1,0 +1,67 @@
+﻿[
+    {
+        "MenuID": 1,
+        "Title": "Google",
+        "Action": null,
+        "Controller": null,
+        "Link": "https://www.google.com/",
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "IsAction": false,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 2,
+        "Title": "Home",
+        "Action": "Index",
+        "Controller": "Home",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "IsAction": true,
+        "IsDefault": true
+    },
+    {
+        "MenuID": 3,
+        "Title": "Ajax",
+        "Action": "AjaxGo",
+        "Controller": "Home",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "IsAction": true,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 4,
+        "Title": "靜態頁1",
+        "Action": "Page",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "PageFilePath": "~/StaticPage/Static1.html",
+        "IsAction": true,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 5,
+        "Title": "HTML Page",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 1,
+        "IsAction": true
+    },
+    {
+        "MenuID": 6,
+        "Title": "雅典娜的介紹",
+        "Action": "Page",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "PageFilePath": "~/App_Data/Athena.txt",
+        "IsAction": true,
+        "IsDefault": false
+    }
+]

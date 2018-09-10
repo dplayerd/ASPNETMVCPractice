@@ -10,8 +10,6 @@ namespace MVC3.Controllers
     {
         public ActionResult ViewDetail(int ModuleInstanceID = 0)
         {
-            //this.ControllerContext.
-
             return PartialView();
         }
     }

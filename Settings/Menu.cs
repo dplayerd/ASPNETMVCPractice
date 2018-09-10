@@ -67,6 +67,9 @@ namespace Settings
         public bool IsDefault { get; set; }
 
         public string PageFilePath { get; set; }
+
+
+        public int SkinID{ get; set; }
         #endregion
     }
 }

@@ -55,10 +55,30 @@ namespace MVC3.Controllers
                     return new StaticController().Page(pageInfo.Title);
 
 
+
+
                 if (pageInfo.IsAction && !pageInfo.IsDefault)
                 {
                     if (dto.PageInfo.Controller == "HtmlModule")
-                        return new HtmlModuleController().ViewDetail(pageInfo.MenuID);
+                    {
+                        //----- 1 
+                        var controller = DependencyResolver.Current.GetService<HtmlModuleController>();
+                        controller.ControllerContext = new ControllerContext(this.Request.RequestContext, controller);
+
+                        return ((HtmlModuleController)controller).ViewDetail(pageInfo.MenuID);
+
+
+
+                        //----- 2
+                        //return new HtmlModuleController().ViewDetail(pageInfo.MenuID);
+
+
+                        //----- 3
+                        //DefaultControllerFactory factory = new DefaultControllerFactory();
+                        //var controller = factory.CreateController(Request.RequestContext, "HtmlModule");
+                        //return ((HtmlModuleController)controller).ViewDetail(pageInfo.MenuID);
+
+                    }
 
                     return RedirectToAction(dto.PageInfo.Action, dto.PageInfo.Controller);
                 }

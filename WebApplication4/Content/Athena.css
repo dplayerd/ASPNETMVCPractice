@@ -1,0 +1,32 @@
+﻿body {
+    color: white;
+    background: slategray url('images/Athena.jpg') no-repeat center center;
+}
+
+a {
+    font-size: 1.5em;
+    color: white;
+}
+
+    a:hover {
+        color: tomato;
+    }
+
+h2 {
+    text-align: right;
+    color: darkgray;
+    font-size: 1.3em;
+}
+
+table {
+    width: 100%;
+}
+
+div {
+    padding: 3px;
+    margin: 1px;
+}
+
+.MainDiv {
+    border: 1px solid darkgray;
+}

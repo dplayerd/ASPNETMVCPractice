@@ -1,0 +1,28 @@
+﻿[
+    {
+        "SiteID": 1,
+        "SiteName": "Main",
+        "Title": "優秀的某間科技",
+        "SiteOwner": "host",
+        "SiteOwnerID": 1,
+        "Logo": "Images/logo.png",
+        "HeaderText": "歡迎來到某間科技公司",
+        "FooterText": "某間科技版權所有 © 2018 Some All Rights Reserved",
+        "DefaultSkinID": 1,
+        "IsDefault": true
+    },
+
+
+    {
+        "SiteID": 2,
+        "SiteName": "Main2",
+        "Title": "雅典娜架站包",
+        "SiteOwner": "host",
+        "SiteOwnerID": 1,
+        "Logo": "Content/Images/Aegis.jpg",
+        "HeaderText": "歡迎來到某間科技公司",
+        "FooterText": "某間科技版權所有 © 2018 Some All Rights Reserved",
+        "DefaultSkinID": 1,
+        "IsDefault": true
+    }
+]

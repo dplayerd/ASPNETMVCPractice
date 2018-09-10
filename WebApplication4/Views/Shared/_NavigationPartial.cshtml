@@ -1,0 +1,32 @@
+﻿@using WebApplication4.Models
+@model IEnumerable<MenuViewModel>
+
+<!--- Sidemenu -->
+<div id="sidebar-menu">
+    <ul class="nav navbar-nav">
+        @foreach (var menu in Model)
+        {
+            if (menu.SubMenu != null)
+            {
+                <li class="has_sub">
+                    @Html.Action("MenuItem", "Navigation", menu)
+
+                    <ul class="list-unstyled">
+                        @foreach (MenuViewModel subMenu in menu.SubMenu)
+                        {
+                            <li>
+                                @Html.Action("MenuItem", "Navigation", subMenu)
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li>
+                    @Html.Action("MenuItem", "Navigation", menu)
+                </li>
+            }
+        }
+    </ul>
+</div>

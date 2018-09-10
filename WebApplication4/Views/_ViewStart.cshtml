@@ -1,0 +1,44 @@
+﻿@{
+
+    string SiteName = ViewContext.RouteData.Values["site"] as string;
+    string CtlName = ViewContext.RouteData.Values["controller"] as string;
+    string ActName = ViewContext.RouteData.Values["action"] as string;
+    string id = ViewContext.RouteData.Values["id"] as string;
+
+
+
+    int layoutNo = 1;
+
+    Dictionary<string, string[]> dic = new Dictionary<string, string[]>();
+
+
+
+
+    if (SiteName == "Default")
+    {
+        if (CtlName == "Home")
+        {
+            layoutNo = 2;
+        }
+        else
+        {
+            layoutNo = 1;
+        }
+    }
+
+
+    switch (layoutNo)
+    {
+        case 1:
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+
+        case 2:
+            Layout = "~/Views/Shared/_Layout2.cshtml";
+            break;
+
+        default:
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+}

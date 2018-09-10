@@ -1,4 +1,41 @@
 ﻿@{
-    //Layout = "~/Views/Shared/_Layout.cshtml";
-    Layout = "~/Views/Shared/_LayoutPractice.cshtml";
+
+    var uriDto = Utility.UriHelper.getCurrentUri();
+
+    Settings.SiteSetting site = uriDto.SiteInfo;
+    Settings.Menu menu = uriDto.PageInfo;
+
+
+
+    int skinID = 0;
+
+
+    if (site != null)
+    {
+        skinID = site.DefaultSkinID;
+    }
+
+    if (menu != null)
+    {
+        skinID = menu.SkinID;
+    }
+
+
+
+    switch (skinID)
+    {
+        case 1:
+            Layout = "~/Views/Shared/_LayoutPractice.cshtml";
+            break;
+
+        default:
+            Layout = "~/Views/Shared/_LayoutPractice.cshtml";
+            //Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+
+
+
+    ////Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_LayoutPractice.cshtml";
 }
