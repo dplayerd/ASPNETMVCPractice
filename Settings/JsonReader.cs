@@ -15,15 +15,28 @@ namespace Settings
         internal const string Menu = "MENU";
 
 
-        private static Dictionary<string, string> dicDataFilePath = new Dictionary<string, string>()
+        private static Dictionary<string, string> dicDataFilePath = null;
+
+        private static void Init()
         {
-            { JsonReader.Site,"F:\\PersonalProjects\\ASPNETMVCPractice\\ASPNETMVCPractice\\MVC3\\APP_Data\\Site.json" },
-            { JsonReader.Menu,"F:\\PersonalProjects\\ASPNETMVCPractice\\ASPNETMVCPractice\\MVC3\\APP_Data\\Menu.json" }
-        };
+            if (dicDataFilePath != null)
+                return;
+
+
+            dicDataFilePath = new Dictionary<string, string>()
+            {
+                { JsonReader.Site,System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Site.json") },
+                { JsonReader.Menu,System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Menu.json") }
+            };
+        }
+
 
 
         internal static T ReadFromFile<T>(string SettingFileName)
         {
+            Init();
+
+
             //<<<<< 檢查字典是否存在 >>>>>
             if (!dicDataFilePath.ContainsKey(SettingFileName))
                 throw new Exception(SettingFileName + "doesn't exist.");

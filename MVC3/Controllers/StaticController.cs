@@ -21,8 +21,8 @@ namespace MVC3.Controllers
             if (menuInfo == null)
                 return new EmptyResult();
                 
-
-            string IOPath = Server.MapPath(menuInfo.PageFilePath);
+            
+            string IOPath = System.Web.HttpContext.Current.Server.MapPath(menuInfo.PageFilePath);
 
 
             if (!System.IO.File.Exists(IOPath))

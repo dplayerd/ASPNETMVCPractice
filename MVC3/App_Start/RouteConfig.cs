@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC3.Route1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,6 +22,21 @@ namespace MVC3
 
 
             // 應改為後台用路徑
+            routes.Add(
+                   new SelfDefineRoute(
+                       Domain: "{domain1}",
+                       url: "{controller}/{action}/{id}",
+                       defaults: new
+                       {
+                           controller = "Home",
+                           action = "Index",
+
+                           id = UrlParameter.Optional
+                       }
+                   )
+               );
+
+
             routes.MapRoute(
                 name: "PageRouting",
                 url: "{SiteName}/{PageName}/{ModuleID}/{ModuleCtlName}/{Parameters}",

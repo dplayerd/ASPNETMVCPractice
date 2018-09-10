@@ -22,7 +22,8 @@
         // 正常內部連結
         var url1 = Utility.UriHelper.genUri(menu.SiteID, menu.MenuID);
 
-
+        if (!string.IsNullOrEmpty(url1))
+            return url1;
 
         return null;
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,9 +36,32 @@ namespace MVC3.Controllers
 
 
 
-            if(string.IsNullOrEmpty(SiteName) || string.IsNullOrEmpty(PageName))
+            if (string.IsNullOrEmpty(SiteName) || string.IsNullOrEmpty(PageName))
+            {
                 UriHelper.genUri(dto.SiteID ?? 0, dto.PageID ?? 0);
+            }
 
+
+            
+
+
+            if (dto.PageInfo != null)
+            {
+                Menu pageInfo = dto.PageInfo;
+
+
+                if (!string.IsNullOrEmpty(pageInfo.PageFilePath))
+                    //return RedirectToAction("Page", "Static", new { MenuTitle = pageInfo.Title });
+                    return new StaticController().Page(pageInfo.Title);
+
+
+                if (pageInfo.IsAction && !pageInfo.IsDefault)
+                    return RedirectToAction(dto.PageInfo.Action, dto.PageInfo.Controller);
+
+
+                if (pageInfo.IsDefault)
+                    return View();
+            }
 
             return View();
         }

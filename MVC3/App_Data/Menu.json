@@ -40,7 +40,7 @@
         "Link": null,
         "MenuSkinID": null,
         "SiteID": 0,
-        "PageFilePath": "F:\\PersonalProjects\\ASPNETMVCPractice\\ASPNETMVCPractice\\MVC3\\StaticPage\\Static1.html",
+        "PageFilePath": "~/StaticPage/Static1.html",
         "IsAction": true,
         "IsDefault": false
     }

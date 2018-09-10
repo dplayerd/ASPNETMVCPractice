@@ -58,6 +58,13 @@ namespace Utility
             if (uri.Segments.Length >= 3)
             {
                 string MenuName = uri.Segments[2].Trim('/');
+
+                // 如果是靜態頁時
+                if (MenuName.CompareTo("Static") == 0 && uri.Segments.Length >= 5)
+                {
+                    MenuName = uri.Segments[4].Trim('/');
+                }
+
                 pageSetting = mgr.getMenu(MenuName, dto.SiteID ?? -1);
             }
             else
