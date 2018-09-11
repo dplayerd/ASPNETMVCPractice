@@ -8,17 +8,15 @@
 
 @foreach (var obj in pmMgr.GetPageModules(Model.PageID))
 {
-    @{ 
-        var moduleDefine = moduleMgr.getModuleInfo(obj.ModuleID);
+    var moduleDefine = moduleMgr.getModuleInfo(obj.ModuleID);
 
-        if (moduleDefine == null)
-        {
-            continue;
-        }
-
-        string ctlName = moduleDefine.Controller;
-        string actName = moduleDefine.Action;
+    if (moduleDefine == null)
+    {
+        continue;
     }
+
+    string ctlName = moduleDefine.Controller;
+    string actName = moduleDefine.Action;
 
 
     @Html.Action(actName, ctlName, new { ModuleInstanceID = Model.PageModuleID })
