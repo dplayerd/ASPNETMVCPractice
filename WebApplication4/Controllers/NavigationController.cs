@@ -17,7 +17,7 @@ namespace WebApplication4.Controllers
             if (NavigationController.menuList != null)
                 return;
 
-
+                
             string siteName = RouteData.Values["site"] as string;
 
             if (string.IsNullOrEmpty(siteName))

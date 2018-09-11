@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HtmlModuleController.cs" />
     <Compile Include="Controllers\ModuleContainerController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\StaticController.cs" />
@@ -220,6 +221,7 @@
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Shared\_MenuItemPartial.cshtml" />
     <Content Include="Views\ModuleContainer\Default.cshtml" />
+    <Content Include="Views\HtmlModule\ViewDetail.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

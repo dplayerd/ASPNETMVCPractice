@@ -3,7 +3,7 @@
         "ModuleInfoID": 1,
         "ModuleName": "HTML / Text",
         "FriendlyName": "HTML",
-        "Action": null,
-        "Controller": null
+        "Action": "ViewDetail",
+        "Controller": "HtmlModule"
     }
 ]

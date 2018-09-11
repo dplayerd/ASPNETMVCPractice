@@ -10,6 +10,7 @@ else if (!string.IsNullOrEmpty(Model.Link))
     <a href="@Model.Link" target="_blank">@Model.Title</a>
 }
 else
-{ 
-    @Html.ActionLink(Model.Title, Model.Action, Model.Controller, null, null)
+{
+    @*@Html.ActionLink(Model.Title, Model.Action, Model.Controller, null, null)*@
+    @Html.ActionLink(Model.Title, "Default", "ModuleContainer", new { MenuTitle = Model.Title }, null)
 }
