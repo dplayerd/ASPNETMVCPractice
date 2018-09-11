@@ -12,14 +12,24 @@ namespace WebApplication4.Controllers
     {
         private static List<MenuViewModel> menuList = null;
 
-
-        public NavigationController()
+        public void InitMenu()
         {
             if (NavigationController.menuList != null)
                 return;
 
 
-            List<Menu> list = new Settings.Settings().getMenus(0);
+            string siteName = RouteData.Values["site"] as string;
+
+            if (string.IsNullOrEmpty(siteName))
+                return;
+
+            SiteSetting site = new Settings.Settings().getSiteSetting(siteName);
+
+            if (site == null)
+                return;
+
+
+            List<Menu> list = new Settings.Settings().getMenus(site.SiteID);
 
             menuList =
                 (from item in list
@@ -44,18 +54,24 @@ namespace WebApplication4.Controllers
         // GET: Navigation
         public ActionResult Menu()
         {
+            this.InitMenu();
+
             return PartialView("_NavigationPartial", NavigationController.menuList);
         }
 
 
         public ActionResult MenuItem(MenuViewModel menu)
         {
+            this.InitMenu();
+
             return PartialView("_MenuItemPartial", menu);
         }
 
 
         public ActionResult Breadcrumbs()
         {
+            this.InitMenu();
+
             throw new NotImplementedException();
         }
     }
