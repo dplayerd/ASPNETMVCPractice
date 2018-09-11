@@ -11,49 +11,33 @@ namespace Settings
 
         public Settings()
         {
-            Settings.initModuleDefines();
+            Settings.initModuleInfos();
             Settings.initMenus();
             Settings.initSiteSettings();
             Settings.initSkins();
         }
 
 
-        #region "Module Define"
-        private static List<ModuleDefine> _ModuleDefines = null;
+        #region "Module Info"
+        private static List<ModuleInfo> _ModuleInfo = null;
 
-        private static void initModuleDefines()
+
+        private static void initModuleInfos()
         {
-            if (_ModuleDefines != null)
+            if(_ModuleInfo != null)
                 return;
 
-            Settings._ModuleDefines = new List<ModuleDefine>()
-            {
-                new ModuleDefine()
-                {
-                    Name = "Module1 Test",
-                    Defines = new Dictionary<string, ModulePageDefine>()
-                    {
-                        { "", new ModulePageDefine (){ Name="", Action="Index", Controller="ModuleTest" } },
-                        { "Second", new ModulePageDefine(){ Name = "Second", Action = "GetView2", Controller = "ModuleTest" } }
-                    }
-                },
-
-                new ModuleDefine()
-                {
-                    Name = "Calendar",
-                    Defines = new Dictionary<string, ModulePageDefine>()
-                    {
-                        { "", new ModulePageDefine (){ Name="", Action="Index", Controller="Calendar" } },
-                        { "Edit", new ModulePageDefine (){ Name="Edit", Action="EditPage", Controller="Calendar" } },
-                        { "Tip", new ModulePageDefine (){ Name="Tip", Action="Created", Controller="Calendar" } },
-                    }
-                }
-            };
+            Settings._ModuleInfo = JsonReader.ReadFromFile<List<ModuleInfo>>(JsonReader.Module); 
         }
 
-        public ModuleDefine getModuleDefine(string ModuleName)
+        public ModuleInfo getModuleInfo(int ModuleInfoID)
         {
-            return Settings._ModuleDefines.Where(obj => obj.Name == ModuleName).FirstOrDefault();
+            return Settings._ModuleInfo.Where(obj => obj.ModuleInfoID == ModuleInfoID).FirstOrDefault();
+        }
+
+        public ModuleInfo getModuleDefine(string ModuleName)
+        {
+            return Settings._ModuleInfo.Where(obj => obj.ModuleName == ModuleName || obj.FriendlyName == ModuleName).FirstOrDefault();
         }
         #endregion
 

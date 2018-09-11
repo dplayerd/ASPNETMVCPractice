@@ -77,7 +77,6 @@ namespace MVC3.Controllers
                         //DefaultControllerFactory factory = new DefaultControllerFactory();
                         //var controller = factory.CreateController(Request.RequestContext, "HtmlModule");
                         //return ((HtmlModuleController)controller).ViewDetail(pageInfo.MenuID);
-
                     }
 
                     return RedirectToAction(dto.PageInfo.Action, dto.PageInfo.Controller);

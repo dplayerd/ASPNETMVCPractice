@@ -19,7 +19,7 @@
         "MenuSkinID": null,
         "SiteID": 1,
         "IsAction": true,
-        "IsDefault":  true
+        "IsDefault": true
     },
     {
         "MenuID": 3,
@@ -34,7 +34,7 @@
     },
     {
         "MenuID": 4,
-        "Title": "Static_1",
+        "Title": "靜態頁1",
         "Action": "Page",
         "Controller": "Static",
         "Link": null,
@@ -51,5 +51,17 @@
         "Controller": "HtmlModule",
         "SiteID": 1,
         "IsAction": true
+    },
+    {
+        "MenuID": 6,
+        "Title": "雅典娜的介紹",
+        "Action": "Page",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "PageFilePath": "~/App_Data/Athena.txt",
+        "IsAction": true,
+        "IsDefault": false
     }
 ]
