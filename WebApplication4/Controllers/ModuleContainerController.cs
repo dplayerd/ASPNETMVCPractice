@@ -38,7 +38,7 @@ namespace WebApplication4.Controllers
                 ControllerName = page.Controller
             };
 
-
+            
             return View(model);
         }
     }

@@ -222,8 +222,12 @@
     <Content Include="Views\Shared\_MenuItemPartial.cshtml" />
     <Content Include="Views\ModuleContainer\Default.cshtml" />
     <Content Include="Views\HtmlModule\ViewDetail.cshtml" />
+    <Content Include="Views\Shared\_BreadcrumbPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\DefaultModule\" />
+    <Folder Include="Views\Page\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

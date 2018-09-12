@@ -1,0 +1,19 @@
+﻿@using WebApplication4.Models
+
+@model IEnumerable<MenuViewModel>
+@{
+    var menu1 = this.Model.FirstOrDefault();
+}
+
+<p>
+    @for (int i = 0; i < this.Model.Count(); i++)
+    {
+        if (i > 0)
+        {
+            @(">")
+        }
+
+
+        @Html.Action("MenuItem", "Navigation", this.Model.ElementAt(i))
+    }
+</p>

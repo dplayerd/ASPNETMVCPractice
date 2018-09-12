@@ -12,6 +12,9 @@ namespace Settings
         public int SiteID { get; set; }
 
         public string SiteName { get; set; }
+
+
+        public string Title { get; set; }
         #endregion
 
 

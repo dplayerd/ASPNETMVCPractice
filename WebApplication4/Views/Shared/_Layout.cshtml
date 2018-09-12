@@ -42,9 +42,15 @@
             </div>
         </div>
     </div>
+ 
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div>
+            @Html.Action("Breadcrumbs", "Navigation")
+        </div>
+        <hr />
+
         <footer>
             @siteSetting.FooterText
         </footer>

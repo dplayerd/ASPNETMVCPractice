@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Utility;
 using WebApplication4.Models;
 
 namespace WebApplication4.Controllers
 {
     public class NavigationController : Controller
     {
+        #region "Private"
         private static List<MenuViewModel> menuList = null;
 
-        public void InitMenu()
+        private void InitMenu()
         {
             if (NavigationController.menuList != null)
                 return;
@@ -111,6 +113,7 @@ namespace WebApplication4.Controllers
                 SubMenu = new List<MenuViewModel>()
             };
         }
+        #endregion
 
 
         // GET: Navigation
@@ -134,7 +137,36 @@ namespace WebApplication4.Controllers
         {
             this.InitMenu();
 
-            throw new NotImplementedException();
+
+            string siteName = this.RouteData.Values["site"] as string;
+
+            SiteSetting site = new Settings.Settings().getSiteSetting(siteName);
+
+            if (site == null)
+                return new EmptyResult();
+
+
+
+            //TODO: 這裡不好，要改
+            string title = Request.QueryString["MenuTitle"];
+
+            Menu page = new Settings.Settings().getMenu(title, site.SiteID);
+            Menu topPage = page;
+
+
+            List<MenuViewModel> models = new List<MenuViewModel>() { this.ConvertMenu(page) };
+
+            while (topPage.TopMenuID.HasValue)
+            {
+                topPage = new Settings.Settings().getMenu(page.TopMenuID.Value);
+
+                if (topPage == null)
+                    break;
+
+                models.Insert(0, this.ConvertMenu(topPage));
+            }
+
+            return PartialView("_BreadcrumbPartial", models);
         }
     }
 }
