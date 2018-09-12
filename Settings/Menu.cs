@@ -54,6 +54,7 @@ namespace Settings
 
         #region "Property"
         public int MenuID { get; set; }
+        public int TopMenuID { get; set; }
         public string Title { get; set; }
         public string Action { get; set; }
         public string Controller { get; set; }

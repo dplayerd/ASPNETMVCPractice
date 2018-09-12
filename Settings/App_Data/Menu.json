@@ -1,6 +1,7 @@
 ﻿[
     {
         "MenuID": 1,
+        "TopMenuID": null,
         "Title": "Google",
         "Action": null,
         "Controller": null,
@@ -12,6 +13,7 @@
     },
     {
         "MenuID": 2,
+        "TopMenuID": null,
         "Title": "Home",
         "Action": "Index",
         "Controller": "Home",
@@ -23,6 +25,7 @@
     },
     {
         "MenuID": 3,
+        "TopMenuID": 2,
         "Title": "Ajax",
         "Action": "AjaxGo",
         "Controller": "Home",
@@ -34,6 +37,7 @@
     },
     {
         "MenuID": 4,
+        "TopMenuID": null,
         "Title": "靜態頁1",
         "Action": "Page",
         "Controller": "Static",
@@ -46,6 +50,7 @@
     },
     {
         "MenuID": 5,
+        "TopMenuID": null,
         "Title": "HTML Page",
         "Action": "Index",
         "Controller": "HtmlModule",
@@ -54,6 +59,7 @@
     },
     {
         "MenuID": 6,
+        "TopMenuID": null,
         "Title": "雅典娜的介紹",
         "Action": "Page",
         "Controller": "Static",

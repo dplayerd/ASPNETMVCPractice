@@ -234,6 +234,4 @@ namespace Settings
         }
         #endregion
     }
-
-
 }
