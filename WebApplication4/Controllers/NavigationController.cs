@@ -17,7 +17,7 @@ namespace WebApplication4.Controllers
             if (NavigationController.menuList != null)
                 return;
 
-                
+
             string siteName = RouteData.Values["site"] as string;
 
             if (string.IsNullOrEmpty(siteName))
@@ -30,24 +30,86 @@ namespace WebApplication4.Controllers
 
 
             List<Menu> list = new Settings.Settings().getMenus(site.SiteID);
+            List<MenuViewModel> models = new List<MenuViewModel>();
 
-            menuList =
-                (from item in list
-                 select
-                     new MenuViewModel()
-                     {
-                         MenuID = item.MenuID,
-                         SiteID = item.SiteID,
-                         Title = item.Title,
-                         Action = item.Action,
-                         Controller = item.Controller,
-                         Class = "",
-                         IsAction = item.IsAction,
-                         Link = item.Link,
-                         PageFilePath = item.PageFilePath,
-                         SubMenu = new List<MenuViewModel>()
-                     }
-                ).ToList();
+            Dictionary<int, MenuViewModel> topMenus = GenerateMenuTree(list);
+
+            menuList = topMenus.Values.ToList();
+        }
+
+
+        private Dictionary<int, MenuViewModel> GenerateMenuTree(List<Menu> list)
+        {
+            // Key: TopMenuID
+            // Value: SubMenus
+            Dictionary<int, List<MenuViewModel>> dicSubMenus = new Dictionary<int, List<MenuViewModel>>();
+
+            // Key: MenuID
+            // Value: MenuViewModel
+            Dictionary<int, MenuViewModel> dicMenus = new Dictionary<int, MenuViewModel>();
+
+            // Key: MenuID
+            // Value: MenuViewModel
+            Dictionary<int, MenuViewModel> topMenus = new Dictionary<int, MenuViewModel>();
+
+
+            // 做物件轉換，以及產生樹狀清單
+            foreach (Menu menu in list)
+            {
+                if (dicMenus.ContainsKey(menu.MenuID))
+                    continue;
+
+
+                var model = this.ConvertMenu(menu);
+                dicMenus.Add(menu.MenuID, model);
+
+
+
+                if (!menu.TopMenuID.HasValue)
+                {
+                    topMenus.Add(menu.MenuID, model);
+                }
+                else
+                {
+                    int topID = menu.TopMenuID.Value;
+
+                    if (!dicSubMenus.ContainsKey(topID))
+                        dicSubMenus.Add(topID, new List<MenuViewModel>());
+
+                    dicSubMenus[topID].Add(model);
+
+
+                    // 尋找屬於自己的母節點
+                    if (dicMenus.ContainsKey(topID))
+                        dicMenus[topID].SubMenu = dicSubMenus[topID];
+                }
+
+                // 尋找屬於自己的子節點
+                if (dicSubMenus.ContainsKey(menu.MenuID))
+                {
+                    model.SubMenu = dicSubMenus[menu.MenuID];
+                }
+            }
+
+            return topMenus;
+        }
+
+
+        private MenuViewModel ConvertMenu(Menu item)
+        {
+            return new MenuViewModel()
+            {
+                MenuID = item.MenuID,
+                SiteID = item.SiteID,
+                Title = item.Title,
+                Action = item.Action,
+                Controller = item.Controller,
+                Class = "",
+                IsAction = item.IsAction,
+                Link = item.Link,
+                PageFilePath = item.PageFilePath,
+                SubMenu = new List<MenuViewModel>()
+            };
         }
 
 

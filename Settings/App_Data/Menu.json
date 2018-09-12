@@ -12,18 +12,6 @@
         "IsDefault": false
     },
     {
-        "MenuID": 2,
-        "TopMenuID": null,
-        "Title": "Home",
-        "Action": "Index",
-        "Controller": "Home",
-        "Link": null,
-        "MenuSkinID": null,
-        "SiteID": 1,
-        "IsAction": true,
-        "IsDefault": true
-    },
-    {
         "MenuID": 3,
         "TopMenuID": 2,
         "Title": "Ajax",
@@ -34,6 +22,18 @@
         "SiteID": 1,
         "IsAction": true,
         "IsDefault": false
+    },
+    {
+        "MenuID": 2,
+        "TopMenuID": null,
+        "Title": "Home",
+        "Action": "Index",
+        "Controller": "Home",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "IsAction": true,
+        "IsDefault": true
     },
     {
         "MenuID": 4,
