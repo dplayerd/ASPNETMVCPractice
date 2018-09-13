@@ -20,7 +20,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: darkgray;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -32,20 +32,14 @@
                 @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                @*<ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-                    <li>@Html.ActionLink("關於", "About", "Home")</li>
-                    <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
-
-                    <li>@Html.ActionLink("測試頁", "Index", "Page1")</li>
-
-
-                        </ul>*@
                 @Html.Action("Menu", "Navigation")
             </div>
         </div>
     </div>
     <div class="container body-content">
+        <br />
+        <br />
+        <p style="font-size:large; color: brown; text-align: right;"> This is Skin2 </p>
         @RenderBody()
         <hr />
         <footer>

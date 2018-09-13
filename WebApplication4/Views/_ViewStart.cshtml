@@ -9,21 +9,25 @@
 
     int layoutNo = 1;
 
-    Dictionary<string, string[]> dic = new Dictionary<string, string[]>();
+    Dictionary<string, int> dic = new Dictionary<string, int>();
+
+
+    dic.Add("系統典故", 1);
+    dic.Add("子頁面", 2);
+    dic.Add("母頁面", 2);
+    dic.Add("靜態頁1", 1);
+    dic.Add("HTML Page", 2);
+    dic.Add("雅典娜的 WIKI 內容", 1);
 
 
 
+    string key = Request.QueryString["MenuTitle"];
 
-    if (SiteName == "Default")
+    key = HttpUtility.UrlDecode(key);
+
+    if (!string.IsNullOrEmpty(key) && dic.ContainsKey(key))
     {
-        if (CtlName == "Home")
-        {
-            layoutNo = 2;
-        }
-        else
-        {
-            layoutNo = 1;
-        }
+        layoutNo = dic[key];
     }
 
 

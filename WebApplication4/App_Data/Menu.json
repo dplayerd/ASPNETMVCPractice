@@ -2,31 +2,36 @@
     {
         "MenuID": 1,
         "TopMenuID": null,
-        "Title": "Google",
-        "Action": null,
-        "Controller": null,
-        "Link": "https://www.google.com/",
-        "MenuSkinID": null,
+        "Title": "系統典故",
+        "Action": "Index",
+        "Controller": "HtmlModule",
         "SiteID": 1,
-        "IsAction": false,
-        "IsDefault": false
+        "IsAction": true
     },
     {
+        //"MenuID": 3,
+        //"TopMenuID": 2,
+        //"Title": "子頁面 - Ajax",
+        //"Action": "AjaxGo",
+        //"Controller": "Home",
+        //"Link": null,
+        //"MenuSkinID": null,
+        //"SiteID": 1,
+        //"IsAction": true,
+        //"IsDefault": false
+
         "MenuID": 3,
         "TopMenuID": 2,
-        "Title": "Ajax",
-        "Action": "AjaxGo",
-        "Controller": "Home",
-        "Link": null,
-        "MenuSkinID": null,
+        "Title": "子頁面",
+        "Action": "Index",
+        "Controller": "HtmlModule",
         "SiteID": 1,
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
     },
     {
         "MenuID": 2,
         "TopMenuID": null,
-        "Title": "Home",
+        "Title": "母頁面",
         "Action": "Index",
         "Controller": "Home",
         "Link": null,
@@ -34,19 +39,6 @@
         "SiteID": 1,
         "IsAction": true,
         "IsDefault": true
-    },
-    {
-        "MenuID": 4,
-        "TopMenuID": null,
-        "Title": "靜態頁1",
-        "Action": "Page",
-        "Controller": "Static",
-        "Link": null,
-        "MenuSkinID": null,
-        "SiteID": 1,
-        "PageFilePath": "~/StaticPage/Static1.html",
-        "IsAction": true,
-        "IsDefault": false
     },
     {
         "MenuID": 5,
@@ -57,16 +49,73 @@
         "SiteID": 1,
         "IsAction": true
     },
+
     {
-        "MenuID": 6,
+        "MenuID": 7,
         "TopMenuID": null,
-        "Title": "雅典娜的介紹",
+        "Title": "外部連結",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 1,
+        "IsAction": true
+    },
+
+    {
+        "MenuID": 11,
+        "TopMenuID": 7,
+        "Title": "外部連結 Google",
+        "Action": null,
+        "Controller": null,
+        "Link": "https://www.google.com/",
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "IsAction": false,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 8,
+        "TopMenuID": 7,
+        "Title": "外部連結 WIKI",
+        "Action": null,
+        "Controller": null,
+        "Link": "https://zh.wikipedia.org/wiki/%E9%9B%85%E5%85%B8%E5%A8%9C",
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "IsAction": false,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 4,
+        "TopMenuID": null,
+        "Title": "靜態頁清單",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 1,
+        "IsAction": true
+    },
+    {
+        "MenuID": 9,
+        "TopMenuID": 4,
+        "Title": "雅典娜的 WIKI 內容",
         "Action": "Page",
         "Controller": "Static",
         "Link": null,
         "MenuSkinID": null,
         "SiteID": 1,
         "PageFilePath": "~/App_Data/Athena.txt",
+        "IsAction": true,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 10,
+        "TopMenuID": 4,
+        "Title": "靜態頁1",
+        "Action": "Page",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "PageFilePath": "~/StaticPage/Static1.html",
         "IsAction": true,
         "IsDefault": false
     }
