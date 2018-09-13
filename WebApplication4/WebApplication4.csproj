@@ -172,6 +172,9 @@
     <Content Include="App_Data\HTML\HTML_1.html" />
     <Content Include="App_Data\HTML\HTML_50.html" />
     <Content Include="App_Data\HTML\HTML_5.html" />
+    <Content Include="App_Data\HTML\HTML_51.html" />
+    <Content Include="App_Data\HTML\HTML_52.html" />
+    <Content Include="App_Data\HTML\HTML_53.html" />
     <Content Include="Content\Athena.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

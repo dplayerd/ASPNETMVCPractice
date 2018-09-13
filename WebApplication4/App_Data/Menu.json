@@ -33,7 +33,7 @@
     {
         "MenuID": 5,
         "TopMenuID": null,
-        "Title": "HTML Page",
+        "Title": "HTML Module",
         "Action": "Index",
         "Controller": "HtmlModule",
         "MenuSkinID": 2,
@@ -44,7 +44,7 @@
     {
         "MenuID": 4,
         "TopMenuID": null,
-        "Title": "靜態頁清單 (以下為滿板)",
+        "Title": " 滿板靜態頁清單 ",
         "Action": "Index",
         "Controller": "HtmlModule",
         "SiteID": 1,
@@ -122,9 +122,43 @@
         "Title": "測試",
         "Action": "Index",
         "Controller": "HtmlModule",
+        "MenuSkinID": 1,
         "SiteID": 2,
         "IsAction": true,
         "IsDefault": true
+    },
+
+    {
+        "MenuID": 51,
+        "TopMenuID": null,
+        "Title": "測試1",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 2,
+        "IsAction": true,
+        "IsDefault": false
+    },
+
+    {
+        "MenuID": 52,
+        "TopMenuID": 51,
+        "Title": "測試2",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 2,
+        "IsAction": true,
+        "IsDefault": false
+    },
+
+    {
+        "MenuID": 53,
+        "TopMenuID": 51,
+        "Title": "測試3",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 2,
+        "IsAction": true,
+        "IsDefault": false
     }
     //----- Site 2 -----
 ]
