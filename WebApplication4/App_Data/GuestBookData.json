@@ -1,0 +1,22 @@
+﻿[
+    {
+        "GBID": 1,
+        "Title": "測試測試",
+        "Content": "這裡是個測試項目\n動不動就要來留一筆",
+        "ReplyGBID": null,
+        "Creator": 0,
+        "CreateDate": "2018/9/12 17:18",
+        "Updator": 0,
+        "UpdateDate": "2018/9/12 17:18"
+    },
+    {
+        "GBID": 2,
+        "Title": "re: 測試測試",
+        "Content": "回覆有成功嗎?",
+        "ReplyGBID": 1,
+        "Creator": 0,
+        "CreateDate": "2018/9/12 17:20",
+        "Updator": 0,
+        "UpdateDate": "2018/9/12 17:20"
+    }
+]

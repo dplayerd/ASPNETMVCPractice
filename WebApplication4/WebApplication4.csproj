@@ -147,14 +147,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GuestBookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HtmlModuleController.cs" />
     <Compile Include="Controllers\ModuleContainerController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\StaticController.cs" />
+    <Compile Include="DataModels\GuestBookData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Manager\GuestBookManager.cs" />
     <Compile Include="Models\MenuViewModel.cs" />
     <Compile Include="Models\ModuleContainerViewModel.cs" />
     <Compile Include="Models\ModuleInstanceViewModel.cs" />
@@ -190,6 +193,7 @@
     <Content Include="App_Data\Site.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\GuestBookData.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -226,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DefaultModule\" />
+    <Folder Include="Views\GuestBook\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
