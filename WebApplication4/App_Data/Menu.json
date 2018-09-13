@@ -1,4 +1,5 @@
 ﻿[
+    //----- Site 1 -----
     {
         "MenuID": 1,
         "TopMenuID": null,
@@ -111,7 +112,10 @@
         "IsAction": false,
         "IsDefault": false
     },
+    //----- Site 1 -----
 
+
+    //----- Site 2 -----
     {
         "MenuID": 50,
         "TopMenuID": null,
@@ -122,4 +126,5 @@
         "IsAction": true,
         "IsDefault": true
     }
+    //----- Site 2 -----
 ]
