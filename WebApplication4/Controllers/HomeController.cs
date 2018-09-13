@@ -10,7 +10,8 @@ namespace WebApplication4.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var list = new Settings.Settings().getSiteSettings();
+            return View(list);
         }
 
         public ActionResult About()

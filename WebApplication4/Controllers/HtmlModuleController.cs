@@ -9,7 +9,7 @@ namespace WebApplication4.Controllers
     public class HtmlModuleController : Controller
     {
 
-        string FilePath = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/");
+        string FilePath = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/HTML/");
 
         public ActionResult ViewDetail(int ModuleInstanceID = 0)
         {

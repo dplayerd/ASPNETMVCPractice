@@ -9,17 +9,6 @@
         "IsAction": true
     },
     {
-        //"MenuID": 3,
-        //"TopMenuID": 2,
-        //"Title": "子頁面 - Ajax",
-        //"Action": "AjaxGo",
-        //"Controller": "Home",
-        //"Link": null,
-        //"MenuSkinID": null,
-        //"SiteID": 1,
-        //"IsAction": true,
-        //"IsDefault": false
-
         "MenuID": 3,
         "TopMenuID": 2,
         "Title": "子頁面",
@@ -46,9 +35,47 @@
         "Title": "HTML Page",
         "Action": "Index",
         "Controller": "HtmlModule",
+        "MenuSkinID": 2,
         "SiteID": 1,
         "IsAction": true
     },
+
+    {
+        "MenuID": 4,
+        "TopMenuID": null,
+        "Title": "靜態頁清單 (以下為滿板)",
+        "Action": "Index",
+        "Controller": "HtmlModule",
+        "SiteID": 1,
+        "IsAction": true
+    },
+    {
+        "MenuID": 9,
+        "TopMenuID": 4,
+        "Title": "雅典娜的 WIKI 內容",
+        "Action": "Page",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "PageFilePath": "~/App_Data/Athena.txt",
+        "IsAction": true,
+        "IsDefault": false
+    },
+    {
+        "MenuID": 10,
+        "TopMenuID": 4,
+        "Title": "靜態頁1",
+        "Action": "Page",
+        "Controller": "Static",
+        "Link": null,
+        "MenuSkinID": null,
+        "SiteID": 1,
+        "PageFilePath": "~/StaticPage/Static1.html",
+        "IsAction": true,
+        "IsDefault": false
+    },
+
 
     {
         "MenuID": 7,
@@ -84,39 +111,15 @@
         "IsAction": false,
         "IsDefault": false
     },
+
     {
-        "MenuID": 4,
+        "MenuID": 50,
         "TopMenuID": null,
-        "Title": "靜態頁清單",
+        "Title": "測試",
         "Action": "Index",
         "Controller": "HtmlModule",
-        "SiteID": 1,
-        "IsAction": true
-    },
-    {
-        "MenuID": 9,
-        "TopMenuID": 4,
-        "Title": "雅典娜的 WIKI 內容",
-        "Action": "Page",
-        "Controller": "Static",
-        "Link": null,
-        "MenuSkinID": null,
-        "SiteID": 1,
-        "PageFilePath": "~/App_Data/Athena.txt",
+        "SiteID": 2,
         "IsAction": true,
-        "IsDefault": false
-    },
-    {
-        "MenuID": 10,
-        "TopMenuID": 4,
-        "Title": "靜態頁1",
-        "Action": "Page",
-        "Controller": "Static",
-        "Link": null,
-        "MenuSkinID": null,
-        "SiteID": 1,
-        "PageFilePath": "~/StaticPage/Static1.html",
-        "IsAction": true,
-        "IsDefault": false
+        "IsDefault": true
     }
 ]

@@ -69,7 +69,10 @@ namespace Settings
             if (SiteID <= -1)
                 return null;
 
-            return Settings._Menus;
+            if (Settings._Menus == null)
+                return null;
+
+            return Settings._Menus.Where(obj => obj.SiteID == SiteID).ToList();
         }
 
 
@@ -124,6 +127,12 @@ namespace Settings
 
 
             Settings._siteSettings = JsonReader.ReadFromFile<List<SiteSetting>>(JsonReader.Site);
+        }
+
+
+        public List<SiteSetting> getSiteSettings()
+        {
+            return Settings._siteSettings;
         }
 
 

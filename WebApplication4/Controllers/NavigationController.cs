@@ -16,8 +16,8 @@ namespace WebApplication4.Controllers
 
         private void InitMenu()
         {
-            if (NavigationController.menuList != null)
-                return;
+            //if (NavigationController.menuList != null)
+            //    return;
 
 
             string siteName = RouteData.Values["site"] as string;

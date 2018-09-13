@@ -7,28 +7,31 @@
 
 
 
-    int layoutNo = 1;
+    Settings.SiteSetting site =
+        new Settings.Settings().getSiteSetting(SiteName);
 
-    Dictionary<string, int> dic = new Dictionary<string, int>();
-
-
-    dic.Add("系統典故", 1);
-    dic.Add("子頁面", 2);
-    dic.Add("母頁面", 2);
-    dic.Add("靜態頁1", 1);
-    dic.Add("HTML Page", 2);
-    dic.Add("雅典娜的 WIKI 內容", 1);
-
-
-
-    string key = Request.QueryString["MenuTitle"];
-
-    key = HttpUtility.UrlDecode(key);
-
-    if (!string.IsNullOrEmpty(key) && dic.ContainsKey(key))
+    if (site == null)
     {
-        layoutNo = dic[key];
+        return;
     }
+
+
+    // TODO: 這麼做不好，要改
+    string MenuTitle = Request.QueryString["MenuTitle"];
+    MenuTitle = HttpUtility.UrlDecode(MenuTitle);
+
+    Settings.Menu pageInfo =
+        new Settings.Settings().getMenu(MenuTitle, site.SiteID);
+
+    if (pageInfo == null)
+    {
+        return;
+    }
+
+    int layoutNo =
+        (pageInfo.MenuSkinID.HasValue) ?
+            pageInfo.MenuSkinID.Value :
+            site.DefaultSkinID;
 
 
     switch (layoutNo)

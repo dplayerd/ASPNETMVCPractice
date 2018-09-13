@@ -16,13 +16,13 @@
     {
         "SiteID": 2,
         "SiteName": "Main2",
-        "Title": "雅典娜架站包",
+        "Title": "雅典娜",
         "SiteOwner": "host",
         "SiteOwnerID": 1,
         "Logo": "Content/Images/Aegis.jpg",
-        "HeaderText": "歡迎來到某間科技公司",
-        "FooterText": "某間科技版權所有 © 2018 Some All Rights Reserved",
-        "DefaultSkinID": 1,
+        "HeaderText": "雅典娜的介紹站",
+        "FooterText": "版權沒有",
+        "DefaultSkinID": 2,
         "IsDefault": true
     }
 ]
