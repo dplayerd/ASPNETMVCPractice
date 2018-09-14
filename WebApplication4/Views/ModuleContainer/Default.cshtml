@@ -1,12 +1,16 @@
 ﻿@model WebApplication4.Models.ModuleContainerViewModel
 
-@{ 
+@{
     var pmMgr = new Settings.Manager.PageModuleManager();
     var moduleMgr = new Settings.Settings();
+
+    var pageModules = pmMgr.GetPageModules(Model.PageID);
 }
 
 
-@foreach (var obj in pmMgr.GetPageModules(Model.PageID))
+@*
+//TODO: 緊急修正錯誤，先當成 Page 即模組
+@foreach (var obj in pageModules)
 {
     var moduleDefine = moduleMgr.getModuleInfo(obj.ModuleID);
 
@@ -20,4 +24,8 @@
 
 
     @Html.Action(actName, ctlName, new { ModuleInstanceID = Model.PageModuleID })
-}
+}*@
+
+
+
+@Html.Action(this.Model.ActionName, this.Model.ControllerName, new { ModuleInstanceID = Model.PageModuleID })

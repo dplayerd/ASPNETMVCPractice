@@ -26,6 +26,20 @@ namespace WebApplication4
                     id = UrlParameter.Optional,
                 }
             );
+
+
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{site}/{controller}/{action}/{id}",
+            //    defaults: new
+            //    {
+            //        site = defaultSiteName,
+            //        controller = "Home",
+            //        action = "Index",
+            //        id = UrlParameter.Optional,
+            //    }
+            //);
         }
 
 
