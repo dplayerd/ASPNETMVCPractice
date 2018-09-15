@@ -42,6 +42,17 @@
     },
 
     {
+        "MenuID": 12,
+        "TopMenuID": null,
+        "Title": "留言版",
+        "Action": "Index",
+        "Controller": "GuestBook",
+        "ModuleID": 2,
+        "SiteID": 1,
+        "IsAction": true
+    },
+
+    {
         "MenuID": 4,
         "TopMenuID": null,
         "Title": " 滿板靜態頁清單 ",

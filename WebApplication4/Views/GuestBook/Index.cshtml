@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebApplication4.DataModels.GuestBookData>
+
+@{ 
+    string MenuTitle = this.Request.QueryString["MenuTitle"];
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GBID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageModuleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ReplyGBID)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Creator)
+        </th>
+        <th>
+            回覆
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </th>*@
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GBID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageModuleID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ReplyGBID)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Creator)
+        </td>
+        <td>
+            @Html.ActionLink("回覆", "Create", new { MasterGBID = item.GBID, MenuTitle = MenuTitle })
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Updator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

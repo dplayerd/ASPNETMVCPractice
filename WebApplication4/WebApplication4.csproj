@@ -239,10 +239,11 @@
     <Content Include="Views\ModuleContainer\Default.cshtml" />
     <Content Include="Views\HtmlModule\ViewDetail.cshtml" />
     <Content Include="Views\Shared\_BreadcrumbPartial.cshtml" />
+    <Content Include="Views\GuestBook\Index.cshtml" />
+    <Content Include="Views\GuestBook\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DefaultModule\" />
-    <Folder Include="Views\GuestBook\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>

@@ -28,5 +28,7 @@ namespace WebApplication4.Models
         public bool IsDefault { get; set; }
 
         public List<MenuViewModel> SubMenu { get; set; }
+
+        public Dictionary<string, string> UrlParams { get; set; }
     }
 }

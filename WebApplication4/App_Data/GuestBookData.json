@@ -1,22 +1,24 @@
-﻿[
+[
     {
         "GBID": 1,
+        "PageModuleID": 12,
         "Title": "測試測試",
         "Content": "這裡是個測試項目\n動不動就要來留一筆",
         "ReplyGBID": null,
         "Creator": 0,
-        "CreateDate": "2018/9/12 17:18",
+        "CreateDate": "2018-09-12T17:18:00",
         "Updator": 0,
-        "UpdateDate": "2018/9/12 17:18"
+        "UpdateDate": "2018-09-12T17:18:00"
     },
     {
         "GBID": 2,
+        "PageModuleID": 12,
         "Title": "re: 測試測試",
         "Content": "回覆有成功嗎?",
         "ReplyGBID": 1,
         "Creator": 0,
-        "CreateDate": "2018/9/12 17:20",
+        "CreateDate": "2018-09-12T17:20:00",
         "Updator": 0,
-        "UpdateDate": "2018/9/12 17:20"
+        "UpdateDate": "2018-09-12T17:20:00"
     }
 ]

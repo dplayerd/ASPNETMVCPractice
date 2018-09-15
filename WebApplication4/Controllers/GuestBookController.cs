@@ -10,26 +10,38 @@ namespace WebApplication4.Controllers
 {
     public class GuestBookController : Controller
     {
+        GuestBookManager gbMgr = new GuestBookManager();
+
+
+
         // GET: GuestBook
         public ActionResult Index(int ModuleInstanceID = 0, int? MasterGBID = null)
         {
-            int PageModuleID = 0;
+            var act = this.RouteData.Values["action"] as string;
+            var ctl = this.RouteData.Values["controller"] as string;
+            var id = this.RouteData.Values["id"] as string;
 
 
             List<GuestBookData> source =
-                new GuestBookManager().GetGuestBookRootList(PageModuleID, MasterGBID);
+                this.gbMgr.GetGuestBookRootList(ModuleInstanceID, MasterGBID);
 
 
-            return View();
+            return PartialView(source);
         }
 
 
-        public ActionResult Create(GuestBookData data)
+        public ActionResult Create(int ModuleInstanceID = 0, int? MasterGBID = null)
         {
-            new GuestBookManager().CreateGuestBook(data);
+            var act = this.RouteData.Values["action"] as string;
+            var ctl = this.RouteData.Values["controller"] as string;
+            var id = this.RouteData.Values["id"] as string;
 
-            
-            return View("Index");
+
+            List<GuestBookData> guestList =
+                this.gbMgr.GetGuestBookRootList(ModuleInstanceID, MasterGBID);
+
+
+            return PartialView(guestList);
         }
     }
 }

@@ -5,5 +5,12 @@
         "FriendlyName": "HTML",
         "Action": "ViewDetail",
         "Controller": "HtmlModule"
+    },
+    {
+        "ModuleInfoID": 2,
+        "ModuleName": "GuestBook",
+        "FriendlyName": "GuestBook",
+        "Action": "Index",
+        "Controller": "GuestBook"
     }
 ]
