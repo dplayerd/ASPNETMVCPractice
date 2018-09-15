@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HostInfo.cs" />
     <Compile Include="JsonReader.cs" />
+    <Compile Include="Manager\HostManager.cs" />
     <Compile Include="Manager\PageModuleManager.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="ModuleInfo.cs" />

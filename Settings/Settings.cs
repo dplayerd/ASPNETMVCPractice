@@ -11,9 +11,10 @@ namespace Settings
 
         public Settings()
         {
-            Settings.initModuleInfos();
-            Settings.initMenus();
+            Settings.initHost();
             Settings.initSiteSettings();
+            Settings.initMenus();
+            Settings.initModuleInfos();
             Settings.initSkins();
         }
 
@@ -171,6 +172,26 @@ namespace Settings
 
             // 如果完全沒東西回傳，回 NULL
             return null;
+        }
+        #endregion
+
+
+        #region "HostInfo"
+        static HostInfo _hostInfo = null;
+
+        private static void initHost()
+        {
+            if (_hostInfo != null)
+                return;
+
+
+            Settings._hostInfo = JsonReader.ReadFromFile<HostInfo>(JsonReader.Host);
+        }
+
+
+        internal HostInfo GetHost()
+        {
+            return Settings._hostInfo;
         }
         #endregion
 

@@ -23,6 +23,6 @@
         "HeaderText": "雅典娜的介紹站",
         "FooterText": "版權沒有",
         "DefaultSkinID": 2,
-        "IsDefault": true
+        "IsDefault": false
     }
 ]

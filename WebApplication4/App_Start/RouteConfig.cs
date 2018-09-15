@@ -13,6 +13,17 @@ namespace WebApplication4
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "DefaultHost",
+                url: "",
+                defaults: new
+                {
+                    controller = "Host",
+                    action = "Default",
+                }
+            );
+
+
             string defaultSiteName = getDefaultSiteName();
 
             routes.MapRoute(
@@ -27,7 +38,6 @@ namespace WebApplication4
                 }
             );
         }
-
 
         private static string getDefaultSiteName()
         {

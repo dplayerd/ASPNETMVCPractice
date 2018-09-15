@@ -11,6 +11,7 @@ namespace Settings
 {
     internal class JsonReader
     {
+        internal const string Host = "HOST";
         internal const string Site = "SITE";
         internal const string Menu = "MENU";
         internal const string Module = "MODULE";
@@ -26,6 +27,7 @@ namespace Settings
 
             dicDataFilePath = new Dictionary<string, string>()
             {
+                { JsonReader.Host, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Host.json") },
                 { JsonReader.Site, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Site.json") },
                 { JsonReader.Menu, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Menu.json") },
                 { JsonReader.Module, System.Web.HttpContext.Current.Server.MapPath("~/APP_Data/Module.json") }
