@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication4.Models;
 
 namespace WebApplication4.Controllers
 {
@@ -10,22 +12,15 @@ namespace WebApplication4.Controllers
     {
         public ActionResult Index()
         {
-            var list = new Settings.Settings().getSiteSettings();
-            return View(list);
-        }
+            string SiteName = this.RouteData.Values["Site"] as string;
+            var site = new Settings.Settings().getSiteSetting(SiteName);
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            if (site == null)
+                return new EmptyResult();
 
-            return View();
-        }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var menu = new Settings.Settings().getDefaultMenu(site.SiteID);
+            return RedirectToAction("Default", "ModuleContainer", new { site = site.SiteName, MenuTitle = menu.Title });
         }
     }
 }

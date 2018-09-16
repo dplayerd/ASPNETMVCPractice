@@ -8,8 +8,7 @@
         "Logo": "Images/logo.png",
         "HeaderText": "歡迎來到某間科技公司",
         "FooterText": "某間科技版權所有 © 2018 Some All Rights Reserved",
-        "DefaultSkinID": 1,
-        "IsDefault": true
+        "DefaultSkinID": 1
     },
 
 
@@ -22,7 +21,6 @@
         "Logo": "Content/Images/Aegis.jpg",
         "HeaderText": "雅典娜的介紹站",
         "FooterText": "版權沒有",
-        "DefaultSkinID": 2,
-        "IsDefault": false
+        "DefaultSkinID": 2
     }
 ]
