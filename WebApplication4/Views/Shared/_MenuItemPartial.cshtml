@@ -11,20 +11,28 @@ else if (!string.IsNullOrEmpty(Model.Link))
 }
 else
 {
-    @{ 
+
+    @*
         if (this.Model.UrlParams == null)
         {
-            this.Model.UrlParams = new Dictionary<string, string>() { { "MenuTitle", this.Model.Title } };
+            this.Model.UrlParams = new Dictionary<string, string>();
         }
-        else
-        {
-            this.Model.UrlParams.Add("MenuTitle", this.Model.Title);
-        }
+
+
+        this.Model.UrlParams.Add("MenuTitle", this.Model.Title);
 
 
         RouteValueDictionary UrlParam = new RouteValueDictionary(this.Model.UrlParams);
-    }
+
+        foreach (var item in this.Model.UrlParams)
+        {
+            UrlParam.Add(item.Key, item.Value);
+        }
 
 
-    @Html.ActionLink(Model.Title, "Default", "ModuleContainer", UrlParam, null)
+        @Html.ActionLink(Model.Title, "Default", "ModuleContainer", UrlParam, null)
+    *@
+
+
+    @Html.ActionLink(Model.Title, "Default", "ModuleContainer", new { MenuTitle = Model.Title }, null)
 }
