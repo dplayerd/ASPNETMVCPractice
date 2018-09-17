@@ -7,7 +7,8 @@
         "Action": "ViewDetail",
         "Controller": "HtmlModule",
         "SiteID": 1,
-        "IsAction": true
+        "IsAction": true,
+        "IsDefault": true
     },
     {
         "MenuID": 3,
@@ -22,13 +23,13 @@
         "MenuID": 2,
         "TopMenuID": null,
         "Title": "母頁面",
-        "Action": "Index",
-        "Controller": "Home",
+        "Action": "ViewDetail",
+        "Controller": "HtmlModule",
         "Link": null,
         "MenuSkinID": null,
         "SiteID": 1,
         "IsAction": true,
-        "IsDefault": true
+        "IsDefault": false
     },
     {
         "MenuID": 5,

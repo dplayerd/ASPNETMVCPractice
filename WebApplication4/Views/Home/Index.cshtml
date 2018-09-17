@@ -1,44 +1,37 @@
-﻿@*@model IEnumerable<Settings.SiteSetting>
+﻿@using WebApplication4.Models
+@model MenuViewModel
 
-    <ul>
-        @foreach (Settings.SiteSetting site in this.Model)
-        {
-        <li>
-            @Html.ActionLink(site.Title, "Default", "ModuleContainer", new { site = site.SiteName, MenuTitle = new Settings.Settings().getDefaultMenu(site.SiteID).Title}, null);
-        </li>
-        }
-    </ul>*@
-
-
-@using WebApplication4.Models
-@model IEnumerable<MenuViewModel>
+@*@model IEnumerable<MenuViewModel>*@
 
 <!--- Sidemenu -->
-<div id="sidebar-menu">
-    <ul class="nav navbar-nav">
-        @foreach (var menu in Model)
-        {
-            if (menu.SubMenu != null)
+@*<div id="sidebar-menu">
+        <ul class="nav navbar-nav">
+            @foreach (var menu in Model)
             {
-                <li class="has_sub">
-                    @Html.Action("MenuItem", "Navigation", menu)
+                if (menu.SubMenu != null)
+                {
+                    <li class="has_sub">
+                        @Html.Action("MenuItem", "Navigation", menu)
 
-                    <ul class="list-unstyled">
-                        @foreach (MenuViewModel subMenu in menu.SubMenu)
-                        {
-                            <li>
-                                @Html.Action("MenuItem", "Navigation", subMenu)
-                            </li>
-                        }
-                    </ul>
-                </li>
+                        <ul class="list-unstyled">
+                            @foreach (MenuViewModel subMenu in menu.SubMenu)
+                            {
+                                <li>
+                                    @Html.Action("MenuItem", "Navigation", subMenu)
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        @Html.Action("MenuItem", "Navigation", menu)
+                    </li>
+                }
             }
-            else
-            {
-                <li>
-                    @Html.Action("MenuItem", "Navigation", menu)
-                </li>
-            }
-        }
-    </ul>
-</div>
+        </ul>
+    </div>*@
+
+
+@*@Html.Action(this.Model.ActionName, this.Model.ControllerName, new { ModuleInstanceID = Model.PageModuleID })*@
