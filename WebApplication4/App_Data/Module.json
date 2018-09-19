@@ -11,6 +11,19 @@
         "ModuleName": "GuestBook",
         "FriendlyName": "GuestBook",
         "Action": "Index",
-        "Controller": "GuestBook"
+        "Controller": "GuestBook",
+        "ModuleView": [
+            {
+                "Name": "Default",
+                "Action": "Index",
+                "Controller": "GuestBook"
+            },
+            {
+                "Name": "Detail",
+                "Action": "Create",
+                "Controller": "GuestBook",
+                "Params": ["Param1=123", "Param2=456"]
+            }
+        ]
     }
 ]
