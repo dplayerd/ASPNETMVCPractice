@@ -3,15 +3,18 @@
         "ModuleInfoID": 1,
         "ModuleName": "HTML / Text",
         "FriendlyName": "HTML",
-        "Action": "ViewDetail",
-        "Controller": "HtmlModule"
+        "ModuleView": [
+            {
+                "Name": "Default",
+                "Action": "ViewDetail",
+                "Controller": "HtmlModule"
+            }
+        ]
     },
     {
         "ModuleInfoID": 2,
         "ModuleName": "GuestBook",
         "FriendlyName": "GuestBook",
-        "Action": "Index",
-        "Controller": "GuestBook",
         "ModuleView": [
             {
                 "Name": "Default",
@@ -19,7 +22,7 @@
                 "Controller": "GuestBook"
             },
             {
-                "Name": "Detail",
+                "Name": "CreateNew",
                 "Action": "Create",
                 "Controller": "GuestBook",
                 "Params": ["Param1=123", "Param2=456"]

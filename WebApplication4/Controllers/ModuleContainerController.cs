@@ -1,4 +1,5 @@
 ﻿using Settings;
+using Settings.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,11 +32,23 @@ namespace WebApplication4.Controllers
                 return new EmptyResult();
 
 
+            List<PageModule> pageModules =
+                new PageModuleManager().GetPageModules(page.MenuID);
+
+
+            var firstPageModule = pageModules.FirstOrDefault();
+
+
+            ModuleInfo moduleInfo =
+                new Settings.Settings().getModuleInfo(firstPageModule.ModuleInfoID);
+
+
             var model = new ModuleContainerViewModel()
             {
                 PageID = page.MenuID,
-                ActionName = page.Action,
-                ControllerName = page.Controller
+                ModuleInfoID = moduleInfo.ModuleInfoID,
+                ActionName = moduleInfo.ModuleView[0].Action,
+                ControllerName = moduleInfo.ModuleView[0].Controller
             };
 
             

@@ -13,14 +13,14 @@ namespace Settings
 
         public int MenuID { get; set; }
 
-        public int ModuleID { get; set; }
+        public int ModuleInfoID { get; set; }
         #endregion
 
 
         #region "Info"
-        public int ContainerID { get; set; }
+        public string PaneName { get; set; }
 
-        public int SortingOrder { get; set; }
+        public int SortIndex { get; set; }
         #endregion
     }
 }

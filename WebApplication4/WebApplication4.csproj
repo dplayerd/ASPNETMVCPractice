@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GuestBookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HostController.cs" />
@@ -206,7 +207,7 @@
     <Content Include="App_Data\host.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="App_Data\MenuModule.json">
+    <Content Include="App_Data\PageModule.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -244,6 +245,7 @@
     <Content Include="Views\GuestBook\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\DefaultModule\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>

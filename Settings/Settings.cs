@@ -15,12 +15,27 @@ namespace Settings
             Settings.initSiteSettings();
             Settings.initMenus();
             Settings.initModuleInfos();
+            Settings.initPageModules();
             Settings.initSkins();
         }
 
 
+        #region "PageModule"
+        internal static List<PageModule> _PageModules = null;
+
+        private static void initPageModules()
+        {
+            if (_PageModules != null)
+                return;
+
+
+            Settings._PageModules = JsonReader.ReadFromFile<List<PageModule>>(JsonReader.PageModule);
+        }
+        #endregion
+
+
         #region "Module Info"
-        private static List<ModuleInfo> _ModuleInfo = null;
+        internal static List<ModuleInfo> _ModuleInfo = null;
 
 
         private static void initModuleInfos()
@@ -44,7 +59,7 @@ namespace Settings
 
 
         #region "Init Pages"
-        private static List<Menu> _Menus = null;
+        internal static List<Menu> _Menus = null;
 
         private static void initMenus()
         {
@@ -119,7 +134,7 @@ namespace Settings
 
 
         #region "Init SiteSetting"
-        private static List<SiteSetting> _siteSettings = null;
+        internal static List<SiteSetting> _siteSettings = null;
 
         private static void initSiteSettings()
         {
@@ -177,7 +192,7 @@ namespace Settings
 
 
         #region "HostInfo"
-        static HostInfo _hostInfo = null;
+        internal static HostInfo _hostInfo = null;
 
         private static void initHost()
         {
@@ -197,7 +212,7 @@ namespace Settings
 
 
         #region "Init Skins"
-        private static List<Skin> _skins = null;
+        internal static List<Skin> _skins = null;
 
         private static void initSkins()
         {

@@ -16,16 +16,33 @@ namespace Settings.Manager
         /// <returns></returns>
         public List<PageModule> GetPageModules(int PageID)
         {
-            return new List<PageModule>() { new PageModule() { MenuID = PageID, ContainerID = PageID, SortingOrder = 1, ModuleID = 1 } };
+            var query =
+                from item in Settings._PageModules
+                where 
+                    item.MenuID == PageID
+                select item;
+
+            var result = query.ToList();
+            return result;
         }
 
 
+
         /// <summary> 查詢有哪些模組在指定頁面容器上 </summary>
+        /// <param name="PaneName"> 頁面區域名稱 </param>
         /// <param name="PageID"> 頁面編號 </param>
         /// <returns></returns>
-        public List<PageModule> GetContainerModules(int ContainerID, int PageID)
+        public List<PageModule> GetContainerModules(string PaneName, int PageID)
         {
-            return new List<PageModule>() { new PageModule() { MenuID = PageID, ContainerID = PageID, SortingOrder = 1, ModuleID = 1 } };
+            var query =
+              from item in Settings._PageModules
+              where
+                  item.MenuID == PageID &&
+                  item.PaneName.CompareTo(PaneName) == 0
+              select item;
+
+            var result = query.ToList();
+            return result;
         }
     }
 }

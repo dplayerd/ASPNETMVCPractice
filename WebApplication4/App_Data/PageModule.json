@@ -1,76 +1,76 @@
 ﻿[
     {
-        "MenuModuleID": 1,
+        "PageModuleID": 1,
         "MenuID": 1,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 2,
+        "PageModuleID": 2,
         "MenuID": 3,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 3,
+        "PageModuleID": 3,
         "MenuID": 2,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 4,
+        "PageModuleID": 4,
         "MenuID": 5,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 5,
+        "PageModuleID": 5,
         "MenuID": 12,
         "ModuleInfoID": 2,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 6,
+        "PageModuleID": 6,
         "MenuID": 4,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 7,
+        "PageModuleID": 7,
         "MenuID": 7,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 8,
+        "PageModuleID": 8,
         "MenuID": 50,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 9,
+        "PageModuleID": 9,
         "MenuID": 51,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 10,
+        "PageModuleID": 10,
         "MenuID": 52,
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
     },
     {
-        "MenuModuleID": 11,
+        "PageModuleID": 11,
         "MenuID": 53,
         "ModuleInfoID": 1,
         "PaneName": "Main",

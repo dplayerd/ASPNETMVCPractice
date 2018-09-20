@@ -18,11 +18,19 @@ namespace Settings
         /// <summary> 顯示用名稱 </summary>
         public string FriendlyName { get; set; }
 
-        /// <summary> Action </summary>
-        public string Action { get; set; }
 
-        /// <summary> Controller </summary>
-        public string Controller { get; set; }
+        public class ModuleViewDefine
+        {
+            public string Controller { get; set; }
+
+            public string Action { get; set; }
+
+            public string Name { get; set; }
+
+            public string[] Params { get; set; }
+        }
+
+
+        public List<ModuleViewDefine> ModuleView { get; set; }
     }
-
 }
