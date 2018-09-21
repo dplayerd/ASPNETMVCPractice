@@ -46,6 +46,11 @@ namespace Settings
             Settings._ModuleInfo = JsonReader.ReadFromFile<List<ModuleInfo>>(JsonReader.Module); 
         }
 
+        public List<ModuleInfo> getModuleInfoList(int[] ModuleInfoID)
+        {
+            return Settings._ModuleInfo.Where(obj => ModuleInfoID.Contains(obj.ModuleInfoID)).ToList();
+        }
+
         public ModuleInfo getModuleInfo(int ModuleInfoID)
         {
             return Settings._ModuleInfo.Where(obj => obj.ModuleInfoID == ModuleInfoID).FirstOrDefault();

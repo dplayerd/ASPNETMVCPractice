@@ -75,5 +75,14 @@
         "ModuleInfoID": 1,
         "PaneName": "Main",
         "SortIndex": 1
+    },
+
+
+    {
+        "PageModuleID": 12,
+        "MenuID": 1,
+        "ModuleInfoID": 1,
+        "PaneName": "Main",
+        "SortIndex": 2
     }
 ]

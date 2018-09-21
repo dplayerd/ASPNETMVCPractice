@@ -169,6 +169,7 @@
     <Content Include="App_Data\Athena.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\HTML\HTML_12.html" />
     <Content Include="App_Data\HTML\HTML_2.html" />
     <Content Include="App_Data\HTML\HTML_3.html" />
     <Content Include="App_Data\HTML\HTML_1.html" />

@@ -36,23 +36,25 @@ namespace WebApplication4.Controllers
                 new PageModuleManager().GetPageModules(page.MenuID);
 
 
-            var firstPageModule = pageModules.FirstOrDefault();
+            Dictionary<int, ModuleInfo> dicModuleInfo =
+                (from item in new Settings.Settings().getModuleInfoList(pageModules.Select(obj => obj.ModuleInfoID).ToArray())
+                 select item).ToDictionary(obj => obj.ModuleInfoID, obj => obj);
 
 
-            ModuleInfo moduleInfo =
-                new Settings.Settings().getModuleInfo(firstPageModule.ModuleInfoID);
+            List<ModuleContainerViewModel> VMs =
+                (from item in pageModules
+                 select new ModuleContainerViewModel
+                 {
+                     PageModuleID = item.PageModuleID,
+                     PageID = page.MenuID,
+                     ModuleInfoID = dicModuleInfo[item.ModuleInfoID].ModuleInfoID,
+                     ActionName = dicModuleInfo[item.ModuleInfoID].ModuleView[0].Action,
+                     ControllerName = dicModuleInfo[item.ModuleInfoID].ModuleView[0].Controller
+                 }).ToList();
 
 
-            var model = new ModuleContainerViewModel()
-            {
-                PageID = page.MenuID,
-                ModuleInfoID = moduleInfo.ModuleInfoID,
-                ActionName = moduleInfo.ModuleView[0].Action,
-                ControllerName = moduleInfo.ModuleView[0].Controller
-            };
 
-            
-            return View(model);
+            return View(VMs);
         }
     }
 }

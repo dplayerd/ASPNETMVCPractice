@@ -17,7 +17,7 @@ namespace WebApplication4.Models
 
 
         /// <summary> 模組實體編號 </summary>
-        public int PageModuleID { get { return this.PageID; } }
+        public int PageModuleID { get; set; }
 
 
         /// <summary> ControllerName </summary>
