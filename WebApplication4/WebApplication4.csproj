@@ -244,9 +244,9 @@
     <Content Include="Views\Shared\_BreadcrumbPartial.cshtml" />
     <Content Include="Views\GuestBook\Index.cshtml" />
     <Content Include="Views\GuestBook\Create.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\DefaultModule\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
