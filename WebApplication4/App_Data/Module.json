@@ -8,6 +8,11 @@
                 "Name": "Default",
                 "Action": "ViewDetail",
                 "Controller": "HtmlModule"
+            },
+            {
+                "Name": "Admin",
+                "Action": "ViewAdmin",
+                "Controller": "HtmlModule"
             }
         ]
     },

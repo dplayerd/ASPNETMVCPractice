@@ -31,5 +31,27 @@ namespace WebApplication4.Controllers
             this.ViewData["Context"] = htmlContent;
             return PartialView();
         }
+
+
+        public ActionResult ViewAdmin(int ModuleInstanceID = 0)
+        {
+             if (ModuleInstanceID <= 0)
+                return new EmptyResult();
+
+
+            string IOPath = FilePath + "HTML_" + ModuleInstanceID + ".html";
+
+
+            if (!System.IO.File.Exists(IOPath))
+                return new EmptyResult();
+
+
+            string htmlContent =
+                System.IO.File.ReadAllText(IOPath);
+
+
+            this.ViewData["Context"] = htmlContent;
+            return PartialView();
+        }
     }
 }

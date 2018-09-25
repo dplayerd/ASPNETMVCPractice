@@ -27,6 +27,18 @@ namespace WebApplication4
             string defaultSiteName = getDefaultSiteName();
 
             routes.MapRoute(
+                name: "DefaultAdmin",
+                url: "{site}/Sysadm/{controller}/{action}/{id}",
+                defaults: new
+                {
+                    site = defaultSiteName,
+                    controller = "Admin",
+                    action = "Index",
+                    id = UrlParameter.Optional,
+                }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{site}/{controller}/{action}/{id}",
                 defaults: new
