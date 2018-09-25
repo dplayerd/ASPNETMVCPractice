@@ -32,6 +32,8 @@ namespace Settings
         public int DefaultSkinID { get; set; }
 
         public bool IsDefault { get; set; }
+
+        public int DefaultPageID { get; set; }
         #endregion
 
 

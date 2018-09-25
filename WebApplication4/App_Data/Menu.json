@@ -7,8 +7,8 @@
         "Action": "ViewDetail",
         "Controller": "HtmlModule",
         "SiteID": 1,
-        "IsAction": true,
-        "IsDefault": true
+        "IsAction": true
+
     },
     {
         "MenuID": 3,
@@ -28,8 +28,8 @@
         "Link": null,
         "MenuSkinID": null,
         "SiteID": 1,
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
+
     },
     {
         "MenuID": 5,
@@ -72,8 +72,8 @@
         "MenuSkinID": null,
         "SiteID": 1,
         "PageFilePath": "~/App_Data/Athena.txt",
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
+
     },
     {
         "MenuID": 10,
@@ -85,8 +85,8 @@
         "MenuSkinID": null,
         "SiteID": 1,
         "PageFilePath": "~/StaticPage/Static1.html",
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
+
     },
 
 
@@ -109,8 +109,8 @@
         "Link": "https://www.google.com/",
         "MenuSkinID": null,
         "SiteID": 1,
-        "IsAction": false,
-        "IsDefault": false
+        "IsAction": false
+
     },
     {
         "MenuID": 8,
@@ -121,8 +121,8 @@
         "Link": "https://zh.wikipedia.org/wiki/%E9%9B%85%E5%85%B8%E5%A8%9C",
         "MenuSkinID": null,
         "SiteID": 1,
-        "IsAction": false,
-        "IsDefault": false
+        "IsAction": false
+
     },
     //----- Site 1 -----
 
@@ -147,8 +147,8 @@
         "Action": "ViewDetail",
         "Controller": "HtmlModule",
         "SiteID": 2,
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
+
     },
 
     {
@@ -158,8 +158,8 @@
         "Action": "ViewDetail",
         "Controller": "HtmlModule",
         "SiteID": 2,
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
+
     },
 
     {
@@ -169,8 +169,8 @@
         "Action": "ViewDetail",
         "Controller": "HtmlModule",
         "SiteID": 2,
-        "IsAction": true,
-        "IsDefault": false
+        "IsAction": true
+
     }
     //----- Site 2 -----
 ]

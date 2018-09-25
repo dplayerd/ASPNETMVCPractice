@@ -40,10 +40,10 @@ namespace Settings
 
         private static void initModuleInfos()
         {
-            if(_ModuleInfo != null)
+            if (_ModuleInfo != null)
                 return;
 
-            Settings._ModuleInfo = JsonReader.ReadFromFile<List<ModuleInfo>>(JsonReader.Module); 
+            Settings._ModuleInfo = JsonReader.ReadFromFile<List<ModuleInfo>>(JsonReader.Module);
         }
 
         public List<ModuleInfo> getModuleInfoList(int[] ModuleInfoID)
@@ -81,7 +81,7 @@ namespace Settings
             if (MenuID <= -1)
                 return null;
 
-            return Settings._Menus.Where(obj=>obj.MenuID == MenuID).FirstOrDefault();
+            return Settings._Menus.Where(obj => obj.MenuID == MenuID).FirstOrDefault();
         }
 
 
@@ -102,22 +102,23 @@ namespace Settings
             if (SiteID <= -1)
                 return null;
 
+
             // 找目標網頁
-            Menu menu = Settings._Menus.Where(obj => string.Compare(obj.Title, MenuName, true) == 0 && obj.SiteID == SiteID).FirstOrDefault();
+            Menu menu =
+                (from obj in Settings._Menus
+                 where
+                     string.Compare(obj.Title, MenuName, true) == 0 &&
+                     obj.SiteID == SiteID
+                 select obj).FirstOrDefault();
 
             if (menu != null)
                 return menu;
 
 
             // 如果找不到，回預設值
-            menu = Settings._Menus.Where(obj => obj.IsDefault == true).FirstOrDefault();
+            Menu defaultPage = this.getDefaultMenu(SiteID);
 
-            if (menu != null)
-                return menu;
-
-
-            // 如果完全沒東西回傳，回 NULL
-            return null;
+            return defaultPage;
         }
 
 
@@ -126,14 +127,16 @@ namespace Settings
         /// <returns></returns>
         public Menu getDefaultMenu(int SiteID)
         {
-            // 如果找不到，回
-            Menu menu = Settings._Menus.Where(obj => obj.IsDefault == true && obj.SiteID == SiteID).FirstOrDefault();
+            SiteSetting site = this.getSiteSetting(SiteID);
 
-            if (menu != null)
-                return menu;
+            if (site == null)
+                return null;
 
-            // 如果完全沒東西回傳，回 NULL
-            return null;
+
+            // 如果找不到，回傳
+            Menu menu = Settings._Menus.Where(obj => obj.SiteID == site.DefaultPageID && obj.SiteID == SiteID).FirstOrDefault();
+
+            return menu;
         }
         #endregion
 

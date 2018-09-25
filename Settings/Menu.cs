@@ -65,8 +65,6 @@ namespace Settings
 
         public int SiteID { get; set; }
 
-        public bool IsDefault { get; set; }
-
         public string PageFilePath { get; set; }
 
 
